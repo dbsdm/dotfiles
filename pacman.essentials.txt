@@ -18,6 +18,8 @@ gnome-disk-utility
 gnome-keyring
 gparted
 gutenprint
+galculator
+gedit
 keepassxc
 linux-headers
 neofetch
