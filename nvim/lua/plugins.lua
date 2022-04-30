@@ -38,6 +38,7 @@ return require("packer").startup(function()
 
     -- COMPLETION SOURCES
     use "hrsh7th/cmp-nvim-lsp" -- from built-in LSP
+    use "hrsh7th/cmp-path" -- from path
     use {
         "saadparwaiz1/cmp_luasnip", -- from LuaSnip
         requires = "L3MON4D3/LuaSnip"
