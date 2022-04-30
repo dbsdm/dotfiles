@@ -7,6 +7,7 @@ wget
 dnsmasq
 dolphin
 base-devel
+bridge-utils
 exa
 ffmpeg
 firefox
@@ -22,6 +23,7 @@ galculator
 gedit
 keepassxc
 linux-headers
+libguestfs
 neofetch
 neovim
 networkmanager
@@ -29,10 +31,12 @@ networkmanager-qt
 obs-studio
 okular
 os-prober
+openbsd-netcat
 print-manager
 python
 python-pip
 qbittorrent
+qemu
 ranger
 xsane
 steam
@@ -42,6 +46,9 @@ tmux
 v4l2loopback-dkms
 veracrypt
 vim
+virt-manager
+virt-viewer
+vde2
 wget
 wine
 winetricks
