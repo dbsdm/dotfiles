@@ -1,0 +1,7 @@
+nerd-fonts-fira-code
+notion-app-enhanced
+nuclear-player-bin
+nvim-packer-git
+peazip-qt5-bin
+skypeforlinux-stable-bin
+ttf-ms-fonts

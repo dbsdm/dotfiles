@@ -1,0 +1,16 @@
+window:
+  opacity: 0.8
+
+font:
+  size: 18.0
+  normal:
+    family: Fira Code Nerd Font
+
+shell:
+  program: /usr/bin/tmux 
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - def
