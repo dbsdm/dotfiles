@@ -25,10 +25,11 @@ LINK(){
     rm -rf $2/$1
     ln -sf $(pwd)/$1 $2
 }
-LINK "alacritty" "~/.config"
-LINK "nvim" "~/.config"
-LINK "mpv" "~/.config"
-LINK "fish" "~/.config"
+
+LINK "alacritty" "$HOME/.config"
+LINK "nvim" "$HOME/.config"
+LINK "fish" "$HOME/.config"
+LINK "mpv" "$HOME/.config"
 
 # apply additional configurations for fish shell
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
