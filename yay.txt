@@ -4,4 +4,5 @@ nuclear-player-bin
 nvim-packer-git
 peazip-qt5-bin
 skypeforlinux-stable-bin
+shell-color-scripts
 ttf-ms-fonts

@@ -4,11 +4,11 @@
 pacman -S --needed --noconfirm - < pacman.essentials.txt
 
 # installing yay helper for AUR
-cd /opt
-git clone https://aur.archlinux.org/yay.git
+$indir = $(pwd)
+git clone https://aur.archlinux.org/yay.git /opt/yay-git
 chown -R db:users ./yay
-cd yay
-makepkg -si
+cd yay | makepkg -si
+cd $indir
 
 # installing AUR packages
 yay -S --noconfirm - < yay.txt

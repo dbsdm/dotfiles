@@ -3,6 +3,7 @@ if status is-interactive
 end
 set fish_greeting
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+command colorscript -e 3
 
 alias fish_aliases="nvim ~/.config/fish/config.fish"
 alias ll="exa -lha --git"
