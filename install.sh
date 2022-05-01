@@ -9,7 +9,7 @@ LINK(){
 LINK "pacman.conf" "/etc/"
 
 # installing essential packages
-sudo pacman -Sy --needed --noconfirm - < pacman.essentials.txt
+sudo pacman -Sy --noconfirm - < pacman.essentials.txt
 
 # installing yay helper for AUR
 indir=$(pwd)
@@ -21,15 +21,6 @@ cd /opt/yay-git && yes | makepkg -si && cd $indir
 # installing AUR packages
 yay -S --noconfirm - < yay.txt
 
-# prompt for KDE install
-answer="y"
-read -p "Install KDE Plasma desktop? (Y/n): " answer
-if [ $answer == "y" ]; then
-    sudo pacman -S --noconfirm - < pacman.kde.txt
-    sudo systemctl enable sddm
-    LINK "latte" "$HOME/.config"
-fi
-
 # link configs
 LINK "alacritty" "$HOME/.config"
 LINK "nvim" "$HOME/.config"
@@ -37,9 +28,13 @@ LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK ".tmux.conf" "$HOME"
 
-
 # install fish configs
 fish ./install_fish_configs.sh
 
 # change shell
 chsh -s /bin/fish db
+
+# install KDE Plasma
+sudo pacman -S --noconfirm - < pacman.kde.txt
+sudo systemctl enable sddm
+LINK "latte" "$HOME/.config"
