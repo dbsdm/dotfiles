@@ -1,14 +1,21 @@
 #!/bin/bash
 
+LINK(){
+    rm -rf $2/$1
+    ln -sf $(pwd)/$1 $2
+}
+
+# pacman config
+LINK "pacman.conf" "/etc/"
+
 # installing essential packages
 pacman -S --needed --noconfirm - < pacman.essentials.txt
 
 # installing yay helper for AUR
-$indir = $(pwd)
+indir=$(pwd)
 git clone https://aur.archlinux.org/yay.git /opt/yay-git
-chown -R db:users ./yay
-cd yay | makepkg -si
-cd $indir
+chown -R db:users /opt/yay-git
+cd /opt/yay-git | makepkg -si | cd $indir
 
 # installing AUR packages
 yay -S --noconfirm - < yay.txt
@@ -21,11 +28,6 @@ if [$answer == "y"]; then
 fi
 
 # link configs
-LINK(){
-    rm -rf $2/$1
-    ln -sf $(pwd)/$1 $2
-}
-
 LINK "alacritty" "$HOME/.config"
 LINK "nvim" "$HOME/.config"
 LINK "fish" "$HOME/.config"
