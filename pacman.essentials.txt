@@ -3,6 +3,7 @@ base
 htop
 cups
 curl
+code
 wget
 dnsmasq
 dolphin

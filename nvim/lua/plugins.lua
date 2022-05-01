@@ -9,6 +9,7 @@ return require("packer").startup(function()
     use "windwp/nvim-autopairs" -- autopairs
     use "lewis6991/gitsigns.nvim" -- gitsigns
     use "kien/ctrlp.vim" -- fuzzy finder
+    use "nvim-treesitter/nvim-treesitter" --treesitter
     -- FILE TREE
     use {
         'kyazdani42/nvim-tree.lua',
@@ -25,11 +26,6 @@ return require("packer").startup(function()
     use {
         "AckslD/nvim-whichkey-setup.lua",
         requires = { "liuchengxu/vim-which-key" },
-    }
-    -- TREESITTER
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ':TSUpdate'
     }
     -- LSP and COMPLETION
     use "neovim/nvim-lspconfig" -- built-in LSP
