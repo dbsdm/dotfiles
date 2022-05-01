@@ -25,6 +25,7 @@ gedit
 keepassxc
 linux-headers
 libguestfs
+lazygit
 neofetch
 neovim
 networkmanager
