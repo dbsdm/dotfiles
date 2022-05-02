@@ -34,5 +34,6 @@ sudo pacman -S --noconfirm - < pacman.kde.txt
 sudo systemctl enable sddm
 LINK "latte" "$HOME/.config"
 
-# change shell
-chsh -s /bin/fish db
+# install oh-my-fish
+rm -rf $HOME/.local/share/omf
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish

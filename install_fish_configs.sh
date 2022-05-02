@@ -1,8 +1,5 @@
 #!/bin/fish
 
-# install oh-my-fish
-rm -rf $HOME/.local/share/omf
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf install clearance
 omf theme clearance
 
@@ -14,3 +11,6 @@ fisher install jorgebucaran/fisher
 fisher install jorgebucaran/nvm.fish
 nvm install latest
 nvm use latest
+
+# change shell
+chsh -s /bin/fish db
