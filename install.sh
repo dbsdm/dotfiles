@@ -9,6 +9,7 @@ LINK(){
 LINK "pacman.conf" "/etc/"
 
 # installing essential packages
+sudo pacman -Sy --noconfirm libinih
 sudo pacman -Sy --noconfirm - < pacman.essentials.txt
 
 # installing yay helper for AUR
@@ -28,13 +29,10 @@ LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK ".tmux.conf" "$HOME"
 
-# install fish configs
-fish ./install_fish_configs.sh
-
-# change shell
-chsh -s /bin/fish db
-
 # install KDE Plasma
 sudo pacman -S --noconfirm - < pacman.kde.txt
 sudo systemctl enable sddm
 LINK "latte" "$HOME/.config"
+
+# change shell
+chsh -s /bin/fish db
