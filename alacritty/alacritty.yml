@@ -3,7 +3,7 @@ window:
   startup_mode: Maximized
 
 font:
-  size: 18.0
+  size: 19.0
   normal:
     family: Fira Code Nerd Font
 
