@@ -34,6 +34,7 @@ local leader = {
 local Goto = {
     d = "definition",
     D = "declaration",
+    g = "jump to beggining of file",
     i = "implementations",
     r = "references",
     c = "comment/uncomment",
