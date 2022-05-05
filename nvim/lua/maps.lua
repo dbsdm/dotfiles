@@ -1,6 +1,5 @@
 local options = { noremap = true }
 local map = vim.api.nvim_set_keymap
-local unmap = vim.api.nvim_del_keymap
 
 --leader
 vim.g.mapleader = " "
@@ -10,6 +9,7 @@ vim.g.mapleader = " "
 map("i", "jk", "<esc>", options) -- jk to enter normal mode
 --normal
 map("n", "nh", ":nohlsearch<cr>", options) -- no highlight
+map("n", "gg", ":1<cr>", options) -- hump to begginig of file
 map("n", "<leader>e", ":NvimTreeToggle<cr>", options) -- file tree
 map("n", "<leader>bn", ":bnext<cr>", options) -- next buffer
 map("n", "<leader>bp", ":bprev<cr>", options) -- prev buffer

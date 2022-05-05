@@ -10,6 +10,7 @@ o.hidden = true
 o.scrolloff = 7
 o.timeoutlen = 500
 o.laststatus=3
+o.termguicolors=true
 
 --window local options
 wo.colorcolumn = "79"
@@ -27,7 +28,6 @@ bo.fileformat = "unix"
 --global vim opts
 vg.user_emmet_leader_key = "<C-Z>" -- trailing ',' required
 vg.gruvbox_transparent_bg = 1
-vg.nerdtree_vis_confirm_open = 0
 
 --misc
 vim.cmd[[filetype plugin on]]
