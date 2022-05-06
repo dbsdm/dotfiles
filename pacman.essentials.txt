@@ -22,6 +22,7 @@ gparted
 gutenprint
 galculator
 gedit
+htop
 keepassxc
 linux-headers
 libguestfs
@@ -34,12 +35,15 @@ obs-studio
 okular
 os-prober
 openbsd-netcat
+pavucontrol
 print-manager
+pulseaudio
 python
 python-pip
 qbittorrent
 qemu
 ranger
+rhythmbox
 xsane
 steam
 sudo
@@ -50,6 +54,7 @@ veracrypt
 vim
 virt-manager
 virt-viewer
+viewnior
 vde2
 wget
 wine
