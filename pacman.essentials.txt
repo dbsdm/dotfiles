@@ -1,4 +1,5 @@
 alacritty
+atool
 base
 htop
 cups
@@ -63,4 +64,5 @@ xf86-video-vesa
 xorg
 xorg-xinit
 xterm
+ueberzug
 youtube-dl
