@@ -9,7 +9,8 @@ return require("packer").startup(function()
     use "windwp/nvim-autopairs" -- autopairs
     use "lewis6991/gitsigns.nvim" -- gitsigns
     use "kien/ctrlp.vim" -- fuzzy finder
-    use "lilydjwg/colorizer" --colors highlighting
+    use "lilydjwg/colorizer" -- colors highlighting
+    use "godlygeek/tabular" -- line up text
     use "nvim-treesitter/nvim-treesitter" --treesitter
     -- FILE TREE
     use {
