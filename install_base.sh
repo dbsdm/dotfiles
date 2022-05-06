@@ -27,6 +27,7 @@ LINK "alacritty" "$HOME/.config"
 LINK "nvim" "$HOME/.config"
 LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
+LINK "ranger" "$HOME/.config"
 LINK ".tmux.conf" "$HOME"
 
 # install oh-my-fish
