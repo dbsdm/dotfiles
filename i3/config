@@ -25,8 +25,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom
 exec --no-startup-id polybar
 exec --no-startup-id xset r rate 200 30
-exec --no-startup-id setxkbmap -layout us,ru,ua
-exec --no-startup-id setxkbmap -option 'grp:win_space_toggle'
+exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
 
 
 ##############################################################################
