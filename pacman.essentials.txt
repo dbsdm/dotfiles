@@ -5,9 +5,7 @@ htop
 cups
 curl
 code
-wget
 dnsmasq
-dolphin
 base-devel
 bridge-utils
 exa
@@ -18,7 +16,6 @@ foomatic-db-gutenprint-ppds
 gimp
 git
 gnome-disk-utility
-gnome-keyring
 gparted
 gutenprint
 galculator
@@ -50,6 +47,7 @@ steam
 sudo
 telegram-desktop
 tmux
+thunar
 v4l2loopback-dkms
 veracrypt
 vim
