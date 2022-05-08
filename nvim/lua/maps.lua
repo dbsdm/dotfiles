@@ -18,6 +18,6 @@ map("n", "H", ":tabp<cr>", options) -- prev tab
 map("n", "<leader>ss", ":CtrlP<cr>", options) -- find files
 map("n", "<leader>sb", ":CtrlPBuffer<cr>", options) -- find buffers
 map("n", "<leader>fp", ":!npx prettier --write %:p<cr>", options) -- prettier
-map("n", "<leader>fb", ":w <bar> !black %:p<cr>", options) -- black
+map("n", "<leader>fb", ":w <bar> !python3 -m black %:p<cr>", options) -- black
 map("n", "<leader>pf", ":w <bar> !flake8 --ignore E501 %:p<cr>", options)
 map("n", "<leader>pi", ":lua Pip_install_lib()<cr>", options)
