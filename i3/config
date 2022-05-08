@@ -56,7 +56,14 @@ bindsym Mod4+Return exec alacritty
 bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec "dmenu_run -sb '#F0C674' -sf '#000000' -p ''"
+# bindsym Mod4+d exec "dmenu_run -sb '#F0C674' -sf '#000000' -p ''"
+
+# start rofi (a program launcher)
+bindsym Mod4+d exec "rofi -show drun -theme slate"
+
+# powermenu
+bindsym Mod4+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -B 'Yes' 'systemctl suspend'"
+bindsym Mod4+Shift+o exec "i3-nagbar -t warning -m 'Poweroff?' -B 'Yes' 'poweroff'"
 
 # change focus
 bindsym Mod4+$left focus left
@@ -124,7 +131,7 @@ set $ws6 "6:chat"
 set $ws7 "7:mus"
 set $ws8 "8:vid"
 set $ws9 "9:gfx"
-set $ws10 "10"
+set $ws10 "10:wine"
 
 # switch to next and prev workspace
 bindsym Mod4+Tab workspace next
@@ -160,26 +167,35 @@ bindsym Mod4+Shift+0 move container to workspace number $ws10
 ##############################################################################
 
 
-for_window [class="Galculator"]         floating enable
-for_window [class="Pavucontrol"]        floating enable
-for_window [class="Virt-manager"]       floating enable
-for_window [class="mpv"]                floating enable
+for_window [class="Galculator"]             floating enable
+for_window [class="Pavucontrol"]            floating enable
+for_window [class="Virt-manager"]           floating enable
+for_window [class="mpv"]                    floating enable
+for_window [class="Nitrogen"]               floating enable
+for_window [class=".exe"]                   floating enable
+for_window [title="Winetricks"]             floating enable
+for_window [title="Wine"]                   floating enable
 
-for_window [class="firefox"]            focus
-for_window [class="Brave-browser"]      focus
-for_window [class="Alacritty"]          focus
-for_window [class="code-oss"]           focus
-for_window [class="Pavucontrol"]        focus
-for_window [class="KeePassXC"]          focus
-for_window [class="okular"]             focus
-for_window [class="Virt-manager"]       focus
-for_window [class="TelegramDesktop"]    focus
-for_window [class="Skype"]              focus
-for_window [class="Rhythmbox"]          focus
-for_window [class="nuclear"]            focus
-for_window [class="mpv"]                focus
-for_window [class="Popcorn-Time"]       focus
-for_window [class="viewnior"]           focus
+for_window [class="firefox"]                focus
+for_window [class="Brave-browser"]          focus
+for_window [class="Alacritty"]              focus
+for_window [class="code-oss"]               focus
+for_window [class="Pavucontrol"]            focus
+for_window [class="KeePassXC"]              focus
+for_window [class="Nitrogen"]               focus
+for_window [class="Thunar"]                 focus
+for_window [class="okular"]                 focus
+for_window [class="Virt-manager"]           focus
+for_window [class="TelegramDesktop"]        focus
+for_window [class="Skype"]                  focus
+for_window [class="Rhythmbox"]              focus
+for_window [class="nuclear"]                focus
+for_window [class="mpv"]                    focus
+for_window [class="Popcorn-Time"]           focus
+for_window [class="viewnior"]               focus
+for_window [class=".exe"]                   focus
+for_window [title="Winetricks"]             focus
+for_window [title="Wine"]                   focus
 
 
 ##############################################################################
@@ -187,21 +203,26 @@ for_window [class="viewnior"]           focus
 ##############################################################################
 
 
-assign [class="firefox"]            → $ws1
-assign [class="Brave-browser"]      → $ws1
-assign [class="Alacritty"]          → $ws2
-assign [class="code-oss"]           → $ws2
-assign [class="Pavucontrol"]        → $ws3
-assign [class="KeePassXC"]          → $ws3
-assign [class="okular"]             → $ws4
-assign [class="Virt-manager"]       → $ws5
-assign [class="TelegramDesktop"]    → $ws6
-assign [class="Skype"]              → $ws6
-assign [class="Rhythmbox"]          → $ws7
-assign [class="nuclear"]            → $ws7
-assign [class="mpv"]                → $ws8
-assign [class="Popcorn-Time"]       → $ws8
-assign [class="viewnior"]           → $ws9
+assign [class="firefox"]                → $ws1
+assign [class="Brave-browser"]          → $ws1
+assign [class="Alacritty"]              → $ws2
+assign [class="code-oss"]               → $ws2
+assign [class="Pavucontrol"]            → $ws3
+assign [class="KeePassXC"]              → $ws3
+assign [class="Nitrogen"]               → $ws3
+assign [class="Thunar"]                 → $ws3
+assign [class="okular"]                 → $ws4
+assign [class="Virt-manager"]           → $ws5
+assign [class="TelegramDesktop"]        → $ws6
+assign [class="Skype"]                  → $ws6
+assign [class="Rhythmbox"]              → $ws7
+assign [class="nuclear"]                → $ws7
+assign [class="mpv"]                    → $ws8
+assign [class="Popcorn-Time"]           → $ws8
+assign [class="viewnior"]               → $ws9
+assign [class=".exe"]                   → $ws10
+assign [title="Winetricks"]             → $ws10
+assign [title="Wine"]                   → $ws10
 
 
 ##############################################################################
