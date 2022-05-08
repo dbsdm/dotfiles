@@ -50,6 +50,7 @@ LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK "ranger" "$HOME/.config"
 LINK ".tmux.conf" "$HOME"
+LINK ".gitconfig" "$HOME"
 
 #installing selected desktop
 if [[ "$desktop" == 2 ]]
