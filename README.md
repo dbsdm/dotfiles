@@ -1,13 +1,6 @@
-Run right after clean Arch Linux installation, as user, using sudo.
+Run right after clean Arch Linux installation, as user.
 ```bash
-./install_base.sh
-```
-KDE Plasma or i3 can be installed manually using separate scripts:
-```bash
-./install_i3.sh
-```
-```bash
-./install_kde.sh
+./install.sh
 ```
 Fish configs(theme, nvm helper):
 ```bash
