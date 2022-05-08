@@ -6,3 +6,4 @@ peazip-qt5-bin
 skypeforlinux-stable-bin
 shell-color-scripts
 ttf-ms-fonts
+gitkraken
