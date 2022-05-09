@@ -49,6 +49,8 @@ LINK "nvim" "$HOME/.config"
 LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK "ranger" "$HOME/.config"
+LINK ".themes" "$HOME"
+LINK ".icons" "$HOME"
 LINK ".tmux.conf" "$HOME"
 LINK ".gitconfig" "$HOME"
 
@@ -70,7 +72,3 @@ then
     sudo systemctl enable sddm
     LINK "latte" "$HOME/.config"
 fi
-
-# install oh-my-fish
-rm -rf $HOME/.local/share/omf
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish

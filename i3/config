@@ -59,7 +59,7 @@ bindsym Mod4+Shift+q kill
 # bindsym Mod4+d exec "dmenu_run -sb '#F0C674' -sf '#000000' -p ''"
 
 # start rofi (a program launcher)
-bindsym Mod4+d exec "rofi -show drun -theme slate"
+bindsym Mod4+d exec "rofi -show drun"
 
 # powermenu
 bindsym Mod4+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -B 'Yes' 'systemctl suspend'"
@@ -262,7 +262,7 @@ bindsym Mod4+r mode "resize"
 
 
 # class                 border  bground text    indicator child_border
-client.focused          #F0C674 #F0C674 #000000 #F0C674   #F0C674
+client.focused          #bd93f9 #bd93f9 #000000 #50fa7b   #bd93f9
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
