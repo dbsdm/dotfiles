@@ -3,9 +3,11 @@
 	email = denys.borsukov@gmail.com
 [core]
 	editor = vim
-[color]
-	ui = auto
 [alias]
 	ci = commit
 [init]
 	defaultBranch = main
+[diff]
+    tool = kdiff3
+[difftool]
+	prompt = false
