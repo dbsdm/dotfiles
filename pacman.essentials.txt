@@ -21,6 +21,7 @@ gutenprint
 galculator
 gedit
 htop
+kdiff3
 keepassxc
 linux-headers
 libguestfs
