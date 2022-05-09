@@ -28,7 +28,9 @@ bo.fileformat = "unix"
 --global vim opts
 vg.user_emmet_leader_key = "<C-Z>" -- trailing ',' required
 vg.gruvbox_transparent_bg = 1
+vg.which_key_centered = 0
 
 --misc
 vim.cmd[[filetype plugin on]]
 vim.cmd[[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]]
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

@@ -1,44 +1,103 @@
 return require("packer").startup(function()
 
-    use "wbthomason/packer.nvim" -- let Packer manage itself
-    use "morhetz/gruvbox" -- colorscheme
-    use "nvim-lualine/lualine.nvim" -- lualine
-    use "tpope/vim-repeat" -- repeat('.') for plugins
-    use "tpope/vim-surround" -- surround
-    use "tpope/vim-commentary" -- comments
-    use "windwp/nvim-autopairs" -- autopairs
-    use "lewis6991/gitsigns.nvim" -- gitsigns
-    use "kien/ctrlp.vim" -- fuzzy finder
-    use "lilydjwg/colorizer" -- colors highlighting
-    use "godlygeek/tabular" -- line up text
-    use "nvim-treesitter/nvim-treesitter" --treesitter
-    -- FILE TREE
+    ------------------------------- GENERAL ----------------------------------
+
+    -- packer
+    use "wbthomason/packer.nvim"
+    -- dot repeat for third-party plugins
+    use "tpope/vim-repeat"
+    -- surround text
+    use "tpope/vim-surround"
+    -- comment and uncomment with one map
+    use "tpope/vim-commentary"
+    -- autopairs
+    use "windwp/nvim-autopairs"
+    -- fuzzy finder
+    use "kien/ctrlp.vim"
+    -- line up text in columns
+    use "godlygeek/tabular"
+    -- symbols outline(tags)
+    use "simrat39/symbols-outline.nvim"
+    -- file tree
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-        }
+        requires = "kyazdani42/nvim-web-devicons"
     }
-    -- EMMET
+    -- emmet
     use {
         "mattn/emmet-vim",
         ft = { "html", "css" }
     }
-    -- MAP HINTS
-    use {
-        "AckslD/nvim-whichkey-setup.lua",
-        requires = { "liuchengxu/vim-which-key" },
-    }
-    -- LSP and COMPLETION
-    use "neovim/nvim-lspconfig" -- built-in LSP
-    use "hrsh7th/nvim-cmp" -- autocompletion
-    use "williamboman/nvim-lsp-installer" -- LSP servers installer
 
-    -- COMPLETION SOURCES
-    use "hrsh7th/cmp-nvim-lsp" -- from built-in LSP
-    use "hrsh7th/cmp-path" -- from path
+    ------------------------------- VISUALS ----------------------------------
+
+    -- gruvbox theme
+    use "morhetz/gruvbox"
+    -- dracula theme
+    use "Mofiqul/dracula.nvim"
+    -- lualine
+    use "nvim-lualine/lualine.nvim"
+    -- treesitter
+    use "nvim-treesitter/nvim-treesitter"
+    -- highlight hex and rgb color codes
+    use "lilydjwg/colorizer"
+    -- tabline
     use {
-        "saadparwaiz1/cmp_luasnip", -- from LuaSnip
+        "alvarosevilla95/luatab.nvim",
+        config = function() require("luatab").setup() end
+    }
+    -- highlight selected range
+    use {
+        "winston0410/range-highlight.nvim",
+        requires = "winston0410/cmd-parser.nvim",
+        config = function() require("range-highlight").setup() end
+    }
+    -- lightbulb symbol for code actions
+    use {
+        "kosayoda/nvim-lightbulb",
+        config = function() require("nvim-lightbulb").setup() end
+    }
+    -- dimming code using treesitter
+    use {
+        "folke/twilight.nvim",
+        config = function() require("twilight").setup() end
+    }
+    -- whichkey
+    use {
+        "folke/which-key.nvim",
+        config = function() require("which-key").setup() end
+    }
+
+    --------------------------------- GIT ------------------------------------
+
+    -- gitsigns
+    use "lewis6991/gitsigns.nvim"
+    -- gitblame
+    use "f-person/git-blame.nvim"
+
+    --------------------------- LSP & COMPLETION -----------------------------
+
+    -- built-in LSP
+    use "neovim/nvim-lspconfig"
+    -- autocompletion
+    use "hrsh7th/nvim-cmp"
+    -- LSP servers installer
+    use "williamboman/nvim-lsp-installer"
+    -- code action menu
+    use {
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu'
+    }
+
+    -------------------------- COMPLETION SOURCES ----------------------------
+
+    -- from LSP servers
+    use "hrsh7th/cmp-nvim-lsp" -- from built-in LSP
+    -- from path
+    use "hrsh7th/cmp-path" -- from path
+    -- from snippets
+    use {
+        "saadparwaiz1/cmp_luasnip",
         requires = "L3MON4D3/LuaSnip"
     }
 
