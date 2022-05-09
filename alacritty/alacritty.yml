@@ -5,7 +5,7 @@ window:
 font:
   size: 13.0
   normal:
-    family: Fira Code Nerd Font
+    family: JetBrainsMono Nerd Font
 
 shell:
   program: /usr/bin/tmux 
