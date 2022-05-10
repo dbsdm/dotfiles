@@ -70,10 +70,12 @@ bindsym Mod4+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym Mod4+d exec "rofi -show drun"
-
+# emoji picker
+bindsym Mod4+Shift+e exec rofimoji
+# network manager
+bindsym Mod4+Shift+n exec ~/.config/rofi/scripts/rofi-network-manager/rofi-network-manager.sh
 # powermenu
-bindsym Mod4+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -B 'Yes' 'systemctl suspend'"
-bindsym Mod4+Shift+o exec "i3-nagbar -t warning -m 'Poweroff?' -B 'Yes' 'poweroff'"
+bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/powermenu
 
 # change focus
 bindsym Mod4+$left focus left
