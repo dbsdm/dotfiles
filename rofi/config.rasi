@@ -1,3 +1,6 @@
+configuration {
+}
+
 * {
     /* Dracula theme colour palette */
     drac-bgd: #282a36;
@@ -12,7 +15,7 @@
     drac-red: #ff5555;
     drac-yel: #f1fa8c;
 
-    font: "Jetbrains Mono 12";
+    font: "JetBrainsMono Nerd Font 12";
 
     foreground: @drac-fgd;
     background-color: @drac-bgd;
