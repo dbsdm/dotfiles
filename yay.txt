@@ -5,3 +5,4 @@ peazip-qt5-bin
 skypeforlinux-stable-bin
 ttf-ms-fonts
 gitkraken
+mpd-notification-git
