@@ -34,11 +34,20 @@ exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_spa
 
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl prev
+
+# Audio controls backup for small keyboards
+bindsym Mod1+Mod4+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
+bindsym Mod1+Mod4+d exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym Mod1+Mod4+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Mod1+Mod4+t exec playerctl play-pause
+bindsym Mod1+Mod4+n exec playerctl next
+bindsym Mod1+Mod4+p exec playerctl prev
 
 # Set movement keys
 set $up k
@@ -209,10 +218,11 @@ for_window [class="Virt-manager"]           focus
 for_window [class="TelegramDesktop"]        focus
 for_window [class="Skype"]                  focus
 for_window [class="Rhythmbox"]              focus
+for_window [class="deemix-gui"]             focus
 for_window [class="nuclear"]                focus
 for_window [class="mpv"]                    focus
 for_window [class="Popcorn-Time"]           focus
-for_window [class="viewnior"]               focus
+for_window [class="Viewnior"]               focus
 for_window [class="Gimp"]                   focus
 for_window [class=".exe"]                   focus
 for_window [title="Winetricks"]             focus
@@ -245,10 +255,11 @@ assign [class="Virt-manager"]               →  $ws5
 assign [class="TelegramDesktop"]            →  $ws6
 assign [class="Skype"]                      →  $ws6
 assign [class="Rhythmbox"]                  →  $ws7
+assign [class="deemix-gui"]                 →  $ws7
 assign [class="nuclear"]                    →  $ws7
 assign [class="mpv"]                        →  $ws8
 assign [class="Popcorn-Time"]               →  $ws8
-assign [class="viewnior"]                   →  $ws9
+assign [class="Viewnior"]                   →  $ws9
 assign [class="Gimp"]                       →  $ws9
 assign [class=".exe"]                       →  $ws10
 assign [title="Winetricks"]                 →  $ws10
