@@ -54,7 +54,19 @@ LINK ".icons" "$HOME"
 LINK ".tmux.conf" "$HOME"
 LINK ".gitconfig" "$HOME"
 
-#installing selected desktop
+# mpd setup
+LINK "mpd" "$HOME/.config"
+touch ~/.config/mpd/database
+touch ~/.config/mpd/state
+touch ~/.config/mpd/pid
+mkdir ~/.config/mpd/playlists
+systemctl enable --user mpd
+# playerctl daemon
+mkdir -p ~/.config/systemd/user
+LINK "playerctld.service" "$HOME/.config/systemd/user/"
+systemctl enable --user playerctld
+
+# installing selected desktop
 if [[ "$desktop" == 2 ]]
 then
     echo "### Installing i3gaps" 
