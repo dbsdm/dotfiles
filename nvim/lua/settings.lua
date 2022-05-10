@@ -33,5 +33,3 @@ vg.which_key_centered = 0
 --misc
 vim.cmd [[filetype plugin on]]
 vim.cmd [[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]]
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-vim.fn.sign_define('LightBulbSign', { text = "" })

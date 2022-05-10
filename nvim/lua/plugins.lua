@@ -55,7 +55,10 @@ return require("packer").startup(function()
     -- comment and uncomment with one map
     use "tpope/vim-commentary"
     -- autopairs
-    use "windwp/nvim-autopairs"
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup() end
+    }
     -- fuzzy finder
     use "kien/ctrlp.vim"
     -- line up text in columns

@@ -1,0 +1,6 @@
+require "conf_plugins.git"
+require "conf_plugins.lightbulb"
+require "conf_plugins.nvimtree"
+require "conf_plugins.treesitter"
+require "conf_plugins.colorscheme"
+require "conf_plugins.lualine"

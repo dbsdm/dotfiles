@@ -39,4 +39,3 @@ require('gitsigns').setup {
         enable = false
     },
 }
-
