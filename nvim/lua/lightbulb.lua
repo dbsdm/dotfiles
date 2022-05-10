@@ -3,12 +3,12 @@ require'nvim-lightbulb'.setup {
     ignore = {},
     sign = {
         enabled = true,
-        priority = 10,
+        priority = 5,
     },
     float = {
         enabled = false,
         -- Text to show in the popup float
-        text = "",
+        text = "",
         -- Available keys for window options:
         -- - height     of floating window
         -- - width      of floating window
@@ -28,14 +28,14 @@ require'nvim-lightbulb'.setup {
     virtual_text = {
         enabled = false,
         -- Text to show at virtual text
-        text = "",
+        text = "",
         -- highlight mode to use for virtual text (replace, combine, blend)
         hl_mode = "replace",
     },
     status_text = {
         enabled = false,
         -- Text to provide when code actions are available
-        text = "",
+        text = "",
         -- Text to provide when no actions are available
         text_unavailable = ""
     }
