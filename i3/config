@@ -22,6 +22,7 @@ smart_gaps on
 
 exec --no-startup-id lxsession
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id polybar
 exec --no-startup-id xset r rate 200 30
@@ -218,6 +219,7 @@ for_window [class="Virt-manager"]           focus
 for_window [class="TelegramDesktop"]        focus
 for_window [class="Skype"]                  focus
 for_window [class="Rhythmbox"]              focus
+for_window [class="cantata"]                focus
 for_window [class="deemix-gui"]             focus
 for_window [class="nuclear"]                focus
 for_window [class="mpv"]                    focus
@@ -255,6 +257,7 @@ assign [class="Virt-manager"]               →  $ws5
 assign [class="TelegramDesktop"]            →  $ws6
 assign [class="Skype"]                      →  $ws6
 assign [class="Rhythmbox"]                  →  $ws7
+assign [class="cantata"]                    →  $ws7
 assign [class="deemix-gui"]                 →  $ws7
 assign [class="nuclear"]                    →  $ws7
 assign [class="mpv"]                        →  $ws8
