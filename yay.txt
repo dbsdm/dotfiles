@@ -4,5 +4,6 @@ nvim-packer-git
 peazip-qt5-bin
 skypeforlinux-stable-bin
 ttf-ms-fonts
+ttf-joypixels
 gitkraken
 mpd-notification-git

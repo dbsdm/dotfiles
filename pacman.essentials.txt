@@ -48,6 +48,7 @@ playerctl
 qbittorrent
 qemu
 ranger
+rofimoji
 rhythmbox
 xsane
 steam
@@ -65,6 +66,9 @@ vde2
 wget
 wine
 winetricks
+xclip
+xdotool
+xdo
 xf86-video-vesa
 xorg
 xorg-xinit
