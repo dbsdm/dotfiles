@@ -61,6 +61,8 @@ touch ~/.config/mpd/state
 touch ~/.config/mpd/pid
 mkdir ~/.config/mpd/playlists
 systemctl enable --user mpd
+LINK "mpd-notification.conf" "$HOME/.config"
+systemctl enable --user mpd-notification
 # playerctl daemon
 mkdir -p ~/.config/systemd/user
 LINK "playerctld.service" "$HOME/.config/systemd/user/"
