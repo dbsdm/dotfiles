@@ -5,6 +5,7 @@ htop
 cups
 curl
 code
+cantata
 dnsmasq
 base-devel
 bridge-utils
@@ -26,6 +27,7 @@ keepassxc
 linux-headers
 libguestfs
 lazygit
+mpd
 neofetch
 neovim
 networkmanager
@@ -39,6 +41,7 @@ print-manager
 pulseaudio
 python
 python-pip
+playerctl
 qbittorrent
 qemu
 ranger
