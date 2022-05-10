@@ -108,7 +108,7 @@ bindsym Mod4+w layout tabbed
 bindsym Mod4+e layout toggle split
 
 # toggle tiling / floating
-bindsym Mod4+Shift+space floating toggle
+bindsym Mod4+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym Mod4+space focus mode_toggle
@@ -200,6 +200,7 @@ for_window [class="Nitrogen"]               floating enable
 for_window [class=".exe"]                   floating enable
 for_window [title="Winetricks"]             floating enable
 for_window [title="Wine"]                   floating enable
+for_window [class="cantata"]                floating enable
 
 for_window [class="firefox"]                focus
 for_window [class="Brave-browser"]          focus
