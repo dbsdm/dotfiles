@@ -1,4 +1,5 @@
 alacritty
+adwaita-icon-theme
 atool
 base
 htop
@@ -22,10 +23,12 @@ gutenprint
 galculator
 gedit
 htop
+iniparser
 kdiff3
 keepassxc
 linux-headers
 libguestfs
+libnotify
 lazygit
 mpd
 neofetch
