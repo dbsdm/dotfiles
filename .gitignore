@@ -4,3 +4,8 @@ fish/functions/
 fish/fish_plugins
 fish/fish_variables
 nvim/plugin/
+mpd/database
+mpd/playlists/
+mpd/pid
+mpd/state
+mpd/sticker.sql
