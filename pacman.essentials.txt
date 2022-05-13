@@ -11,6 +11,7 @@ dnsmasq
 base-devel
 bridge-utils
 exa
+fd
 ffmpeg
 firefox
 fish
@@ -47,6 +48,7 @@ python-pip
 playerctl
 qbittorrent
 qemu
+ripgrep
 ranger
 rofimoji
 rhythmbox
