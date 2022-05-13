@@ -203,6 +203,7 @@ for_window [class=".exe"]                   floating enable
 for_window [title="Winetricks"]             floating enable
 for_window [title="Wine"]                   floating enable
 for_window [class="cantata"]                floating enable
+for_window [class="KeePassXC"]              floating enable
 
 for_window [class="firefox"]                focus
 for_window [class="Brave-browser"]          focus
