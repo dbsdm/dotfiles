@@ -59,8 +59,6 @@ return require("packer").startup(function()
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup() end
     }
-    -- fuzzy finder
-    use "kien/ctrlp.vim"
     -- line up text in columns
     use "godlygeek/tabular"
     -- symbols outline(tags)
@@ -75,6 +73,15 @@ return require("packer").startup(function()
         "mattn/emmet-vim",
         ft = { "html", "css" }
     }
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+            'nvim-lua/plenary.nvim',
+        }
+    }
+
 
     ------------------------------- VISUALS ----------------------------------
 

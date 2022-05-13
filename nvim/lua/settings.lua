@@ -24,6 +24,7 @@ bo.shiftwidth = 4
 bo.expandtab = true
 bo.autoindent = true
 bo.fileformat = "unix"
+bo.undofile = true
 
 --global vim opts
 vg.user_emmet_leader_key = "<C-Z>" -- trailing ',' required
