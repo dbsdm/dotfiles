@@ -12,5 +12,8 @@ fisher install jorgebucaran/nvm.fish
 nvm install latest
 nvm use latest
 
+# install tide prompt
+fisher install IlanCosman/tide@v5
+
 # change shell
 chsh -s /bin/fish db
