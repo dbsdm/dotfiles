@@ -142,6 +142,8 @@ return require("packer").startup(function()
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu'
     }
+    -- collection of snippets for different languages
+    use "rafamadriz/friendly-snippets"
 
     -------------------------- COMPLETION SOURCES ----------------------------
 
