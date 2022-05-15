@@ -2,6 +2,7 @@ alacritty
 adwaita-icon-theme
 atool
 base
+btop
 htop
 cups
 curl
@@ -48,6 +49,7 @@ python-pip
 playerctl
 qbittorrent
 qemu
+qt5ct
 ripgrep
 ranger
 rofimoji
