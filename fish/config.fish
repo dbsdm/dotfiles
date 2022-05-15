@@ -3,6 +3,7 @@ if status is-interactive
 end
 set fish_greeting
 set -x VIRTUAL_ENV_DISABLE_PROMPT 0
+set -gx QT_QPA_PLATFORMTHEME qt5ct
 
 alias fish_aliases="nvim ~/.config/fish/config.fish"
 alias ll="exa -lha --git"
