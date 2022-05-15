@@ -5,33 +5,42 @@ LINK(){
     sudo ln -sf $(pwd)/$1 $2
 }
 
-# desktop options
-read -p "Which desktop to install(1-none 2-i3gaps 3-KDE Plasma): " desktop
+# select desktop
+echo -e "Available desktops:\n"
+desktops=`ls ./desktops/`
+for folder in $desktops
+do
+    echo -e "\t$folder"
+done
 
-if [ -z "$desktop" ] 
-then 
-    echo 'Choose at least one option!' 
-    exit 0 
+echo -e "\tminimal (no desktop)\n"
+read -p "Which desktop should be installed? " desktop
+
+correct=false
+for folder in $desktops
+do
+    if [ $folder == $desktop ]; then
+        correct=true
+    fi
+done
+
+if [ $desktop == "minimal" ]; then
+    correct=true
+fi
+if [ $correct == false ]; then
+    echo -e "\n\e[31mInvalid choice.\e[0m"
+    exit
 fi
 
-if ! [[ "$desktop" =~ ^[+-]?[0-9]+\.?[0-9]*$ ]] 
-then 
-    echo "Enter a number." 
-    exit 0 
-fi
-
-if [[ "$desktop" != 1 ]] && [[ "$desktop" != 2 ]] && [[ "$desktop" != 3 ]]
-then 
-    echo "Invalid option." 
-    exit 0 
-fi
+echo -e "\n\e[32mDesktop will be installed: $desktop\e[0m"
+sleep 3
 
 # pacman config
 LINK "pacman.conf" "/etc/"
 
 # installing essential packages
-sudo pacman -Sy --noconfirm libinih
-sudo pacman -Sy --noconfirm - < pacman.essentials.txt
+sudo pacman -Sy --noconfirm libinih # missing pgp key :/
+sudo pacman -Sy --noconfirm - < pacman.txt
 
 # installing yay helper for AUR
 indir=$(pwd)
@@ -63,26 +72,21 @@ mkdir ~/.config/mpd/playlists
 systemctl enable --user mpd
 LINK "mpd-notification.conf" "$HOME/.config"
 systemctl enable --user mpd-notification
+
 # playerctl daemon
 mkdir -p ~/.config/systemd/user
 LINK "playerctld.service" "$HOME/.config/systemd/user/"
 systemctl enable --user playerctld
 
 # installing selected desktop
-if [[ "$desktop" == 2 ]]
-then
-    echo "### Installing i3gaps" 
-    sudo pacman -S --noconfirm - < pacman.i3.txt
-    yay -S --noconfirm - < yay.i3.txt
-    sudo systemctl enable sddm
-    LINK "i3" "$HOME/.config"
-    LINK "picom.conf" "$HOME/.config"
-    LINK "polybar" "$HOME/.config"
-    LINK "rofi" "$HOME/.config"
-elif [[ "$desktop" == 3 ]]
-then
-    echo "### Installing KDE" 
-    sudo pacman -S --noconfirm - < pacman.kde.txt
-    sudo systemctl enable sddm
-    LINK "latte" "$HOME/.config"
+if [ $desktop == "none" ]; then
+    fish ./fish.sh
+    echo -e "\n\e[32mInstallation finished without errors.\e[0m"
+    exit
+else
+    cd ./desktops/$desktop/
+    bash ./install.sh
+    cd ../..
+    fish ./fish.sh
+    echo -e "\n\e[32mInstallation finished without errors.\e[0m"
 fi
