@@ -54,6 +54,8 @@ return require("packer").startup(function()
     use "tpope/vim-surround"
     -- comment and uncomment with one map
     use "tpope/vim-commentary"
+    -- floating terminal
+    use "voldikss/vim-floaterm"
     -- autopairs
     use {
         "windwp/nvim-autopairs",

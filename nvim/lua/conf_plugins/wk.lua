@@ -29,6 +29,10 @@ wk.register({
         n = { ":bnext<cr>", "next buffer" },
         p = { ":bprev<cr>", "prev buffer" },
     },
+    c = {
+        name = "COMPILE and/or RUN",
+        p = { ":w <bar> FloatermNew --autoclose=0 python3 %<cr>", "Run file with Python3" }
+    },
     e = { ":NvimTreeToggle<cr>", "FILE TREE" },
     l = {
         name = "LSP",
