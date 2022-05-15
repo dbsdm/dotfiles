@@ -21,6 +21,7 @@ smart_gaps on
 
 
 exec --no-startup-id lxsession
+exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
 exec --no-startup-id picom

@@ -1,9 +1,11 @@
 dmenu
+dunst
 i3-gaps
 i3status
 lxsession
 lxappearance
 nitrogen
+network-manager-applet
 picom
 rofi
 sddm
