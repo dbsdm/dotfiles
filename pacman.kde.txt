@@ -1,4 +1,0 @@
-plasma-desktop
-sddm
-sddm-kcm
-latte-dock
