@@ -33,6 +33,7 @@ libguestfs
 libnotify
 lazygit
 mpd
+mpc
 neofetch
 neovim
 networkmanager
