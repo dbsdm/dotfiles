@@ -54,6 +54,7 @@ yay -S --noconfirm - < yay.txt
 
 # link configs
 LINK "alacritty" "$HOME/.config"
+LINK "kitty" "$HOME/.config"
 LINK "nvim" "$HOME/.config"
 LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
