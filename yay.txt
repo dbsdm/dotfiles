@@ -7,3 +7,4 @@ ttf-ms-fonts
 ttf-joypixels
 gitkraken
 mpd-notification-git
+zaread-git
