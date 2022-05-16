@@ -59,6 +59,7 @@ LINK "nvim" "$HOME/.config"
 LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK "ranger" "$HOME/.config"
+LINK "zathura" "$HOME/.config"
 LINK ".themes" "$HOME"
 LINK ".icons" "$HOME"
 LINK ".tmux.conf" "$HOME"
@@ -78,6 +79,9 @@ systemctl enable --user mpd-notification
 mkdir -p ~/.config/systemd/user
 LINK "playerctld.service" "$HOME/.config/systemd/user/"
 systemctl enable --user playerctld
+
+# default applications
+bash ./default-apps.sh
 
 # installing selected desktop
 if [ $desktop == "none" ]; then
