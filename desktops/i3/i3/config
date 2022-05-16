@@ -22,7 +22,8 @@ smart_gaps on
 
 exec --no-startup-id lxsession
 exec --no-startup-id nm-applet
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id nitrogen --restore
+exec --no-startup-id betterlockscreen -w
 exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id polybar
@@ -77,6 +78,8 @@ bindsym Mod4+Shift+e exec rofimoji
 bindsym Mod4+Shift+n exec ~/.config/rofi/scripts/rofi-network-manager/rofi-network-manager.sh
 # powermenu
 bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/powermenu
+# lock screen
+bindsym Mod4+Mod1+l exec betterlockscreen -l
 
 # change focus
 bindsym Mod4+$left focus left
