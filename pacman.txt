@@ -85,3 +85,7 @@ xorg-xinit
 xterm
 ueberzug
 youtube-dl
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-mupdf
