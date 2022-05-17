@@ -1,4 +1,5 @@
 gitkraken
+ly
 mpd-notification-git
 nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
