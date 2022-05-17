@@ -40,17 +40,17 @@ exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_spa
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl prev
+bindsym XF86AudioPlay exec mpc --port=8888 toggle
+bindsym XF86AudioNext exec mpc --port=8888 next
+bindsym XF86AudioPrev exec mpc --port=8888 prev
 
 # Audio controls backup for small keyboards
 bindsym Mod1+Mod4+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
 bindsym Mod1+Mod4+d exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym Mod1+Mod4+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym Mod1+Mod4+t exec playerctl play-pause
-bindsym Mod1+Mod4+n exec playerctl next
-bindsym Mod1+Mod4+p exec playerctl prev
+bindsym Mod1+Mod4+t exec mpc --port=8888 toggle
+bindsym Mod1+Mod4+n exec mpc --port=8888 next
+bindsym Mod1+Mod4+p exec mpc --port=8888 prev
 
 # Set movement keys
 set $up k
