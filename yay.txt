@@ -1,10 +1,10 @@
+gitkraken
+mpd-notification-git
 nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 nvim-packer-git
 peazip-qt5-bin
 skypeforlinux-stable-bin
-ttf-ms-fonts
 ttf-joypixels
-gitkraken
-mpd-notification-git
+ttf-ms-fonts
 zaread-git

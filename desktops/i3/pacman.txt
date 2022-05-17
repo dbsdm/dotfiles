@@ -2,10 +2,10 @@ dmenu
 dunst
 i3-gaps
 i3status
-lxsession
 lxappearance
-nitrogen
+lxsession
 network-manager-applet
+nitrogen
 picom
 rofi
 sddm
