@@ -78,6 +78,8 @@ mkdir -p ~/.config/systemd/user
 LINK "playerctld.service" "$HOME/.config/systemd/user/"
 
 # systemd setup
+sudo systemctl enable ly
+sudo systemctl enable cups
 sudo systemctl enable libvirtd
 systemctl enable --user mpd
 systemctl enable --user mpd-notification
