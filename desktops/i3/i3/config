@@ -80,7 +80,7 @@ bindsym Mod4+Shift+n exec ~/.config/rofi/scripts/rofi-network-manager/rofi-netwo
 # powermenu
 bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/powermenu
 # lock screen
-bindsym Mod4+Mod1+l exec betterlockscreen -l
+bindsym Mod4+Mod1+l exec mpc --port=8888 pause && betterlockscreen -l
 
 # change focus
 bindsym Mod4+$left focus left
