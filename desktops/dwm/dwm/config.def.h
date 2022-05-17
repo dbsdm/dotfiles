@@ -1,6 +1,6 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 5;        /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows monitor,X to pin systray to monitor */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
 	"lxsession", NULL,
 	"nm-applet", NULL,
-	"betterlockscreen -w", NULL,
+	"betterlockscreen", "-w", NULL,
 	"conky", NULL,
 	"dunst", NULL,
 	"picom", NULL,
@@ -99,6 +99,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *mutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *volucmd[]  = { "pactl", "set-sink-volume", "0", "+1%", NULL };
+static const char *voldcmd[]  = { "pactl", "set-sink-volume", "0", "-1%", NULL };
+static const char *mpctogglecmd[]  = { "mpc", "--port=8888", "toggle", NULL };
+static const char *mpcnextcmd[]  = { "mpc", "--port=8888", "next", NULL };
+static const char *mpcprevcmd[]  = { "mpc", "--port=8888", "prev", NULL };
+static const char *mpcpausecmd[]  = { "mpc", "--port=8888", "pause", NULL };
+static const char *lockcmd[]  = { "betterlockscreen", "-l", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -107,21 +115,30 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY|Mod1Mask,              XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_q,      setlayout,      {0} },
 	{ MODKEY,                       XK_f,      togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_Right,  viewnext,       {0} },
 	{ MODKEY,                       XK_Left,   viewprev,       {0} },
 	{ MODKEY,                       XK_Tab,    viewnext,       {0} },
+
+	{ MODKEY|Mod1Mask,              XK_i,      spawn,          {.v = volucmd } },
+	{ MODKEY|Mod1Mask,              XK_d,      spawn,          {.v = voldcmd } },
+	{ MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = mutecmd } },
+	{ MODKEY|Mod1Mask,              XK_t,      spawn,          {.v = mpctogglecmd } },
+	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = mpcnextcmd } },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = mpcprevcmd } },
+
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,             XK_Tab,    viewprev,       {0} },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = mpcpausecmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
