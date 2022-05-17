@@ -1,0 +1,8 @@
+conky
+dmenu
+dunst
+lxappearance
+lxsession
+network-manager-applet
+nitrogen
+picom
