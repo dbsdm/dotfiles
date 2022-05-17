@@ -11,6 +11,5 @@ mpd/state
 mpd/sticker.sql
 .icons/default/
 desktops/dwm/dwm/*.o
-desktops/dwm/dwm/*.1
 desktops/dwm/dwm/dwm
 desktops/dwm/dwm/config.h
