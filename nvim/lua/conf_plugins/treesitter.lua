@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
     "tsx",
     "typescript",
     "yaml",
+    "rust",
   },
 
   sync_install = true,

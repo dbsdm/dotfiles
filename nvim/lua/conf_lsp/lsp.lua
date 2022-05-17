@@ -78,7 +78,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 ------------------------------- LSP AUTO INSTALLER ---------------------------
 
 local lspconfig = require 'lspconfig'
-local servers = { "pyright", "sumneko_lua" }
+local servers = { "pyright", "sumneko_lua", "rust_analyzer" }
 require("nvim-lsp-installer").setup({
 	ensure_installed = servers,
 	automatic_installation = true,
