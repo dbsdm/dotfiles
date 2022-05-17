@@ -1,3 +1,4 @@
+conky
 dunst
 i3-gaps
 lxappearance
