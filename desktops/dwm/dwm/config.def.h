@@ -109,6 +109,7 @@ static const char *mpcnextcmd[]  = { "mpc", "--port=8888", "next", NULL };
 static const char *mpcprevcmd[]  = { "mpc", "--port=8888", "prev", NULL };
 static const char *mpcpausecmd[]  = { "mpc", "--port=8888", "pause", NULL };
 static const char *lockcmd[]  = { "betterlockscreen", "-l", NULL };
+static const char *sscmd[]  = { "flameshot", "gui", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -134,6 +135,8 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_t,      spawn,          {.v = mpctogglecmd } },
 	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = mpcnextcmd } },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = mpcprevcmd } },
+
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          {.v = sscmd } },
 
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
