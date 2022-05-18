@@ -13,3 +13,6 @@ mpd/sticker.sql
 desktops/dwm/dwm/*.o
 desktops/dwm/dwm/dwm
 desktops/dwm/dwm/config.h
+desktops/dwm/slstatus/*.o
+desktops/dwm/slstatus/config.h
+desktops/dwm/slstatus/slstatus
