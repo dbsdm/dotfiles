@@ -24,8 +24,11 @@ New configuration will be automatically picked up and offered during installatio
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** rofi, polybar, dunst, conky<br/>
 <details><summary>Screenshots</summary>
-![2022-05-18_04-18](https://user-images.githubusercontent.com/44934250/168938410-6cb002c8-bba3-48ec-b704-0d8ab58d325d.png)
-![2022-05-18_04-20](https://user-images.githubusercontent.com/44934250/168938426-a3cc6c4d-6dfc-43ef-90b9-22edf5402693.png)
+  
+![i3-1](https://user-images.githubusercontent.com/44934250/168938410-6cb002c8-bba3-48ec-b704-0d8ab58d325d.png)
+  
+![i3-2](https://user-images.githubusercontent.com/44934250/168938426-a3cc6c4d-6dfc-43ef-90b9-22edf5402693.png)
+  
 </details>
 
 ### dwm
@@ -33,5 +36,7 @@ New configuration will be automatically picked up and offered during installatio
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** dmenu, slstatus, dunst, conky<br/>
 <details><summary>Screenshots</summary>
-![2022-05-18_04-14](https://user-images.githubusercontent.com/44934250/168938447-8ec25173-50fd-48f6-87e3-38104d862fe4.png)
+  
+![dwm-1](https://user-images.githubusercontent.com/44934250/168938447-8ec25173-50fd-48f6-87e3-38104d862fe4.png)
+  
 </details>
