@@ -49,6 +49,7 @@ obs-studio
 okular
 openbsd-netcat
 os-prober
+pamixer
 pavucontrol
 playerctl
 print-manager
