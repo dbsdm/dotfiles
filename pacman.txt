@@ -64,6 +64,7 @@ ranger
 rhythmbox
 ripgrep
 rofimoji
+rtorrent
 steam
 sudo
 telegram-desktop
