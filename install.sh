@@ -60,11 +60,11 @@ LINK "fish" "$HOME/.config"
 LINK "mpv" "$HOME/.config"
 LINK "ranger" "$HOME/.config"
 LINK "zathura" "$HOME/.config"
-LINK "rtorrent" "$HOME/.config"
 LINK ".themes" "$HOME"
 LINK ".icons" "$HOME"
 LINK ".tmux.conf" "$HOME"
 LINK ".gitconfig" "$HOME"
+LINK ".rtorrent.rc" "$HOME"
 
 # mpd setup
 LINK "mpd" "$HOME/.config"
