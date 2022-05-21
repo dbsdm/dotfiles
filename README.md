@@ -24,20 +24,19 @@ New configuration will be automatically picked up and offered during installatio
 **Theme:** Dracula<br/>
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** rofi, polybar, dunst, conky<br/>
-<details><summary>Screenshots</summary>
-  
-![i3-1](https://user-images.githubusercontent.com/44934250/168938410-6cb002c8-bba3-48ec-b704-0d8ab58d325d.png)
-  
-![i3-2](https://user-images.githubusercontent.com/44934250/168938426-a3cc6c4d-6dfc-43ef-90b9-22edf5402693.png)
-  
-</details>
 
 ### dwm
 **Theme:** Dracula<br/>
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** dmenu, slstatus, dunst, conky<br/>
-<details><summary>Screenshots</summary>
-  
-![dwm-1](https://user-images.githubusercontent.com/44934250/168938447-8ec25173-50fd-48f6-87e3-38104d862fe4.png)
-  
-</details>
+**Applied patches:**
+1. [Actual fulscreen](https://dwm.suckless.org/patches/actualfullscreen/)
+2. [Adjacent tag, skip vacant](https://dwm.suckless.org/patches/adjacenttag/)
+3. [Always center](https://dwm.suckless.org/patches/alwayscenter/)
+4. [Attach aside](https://dwm.suckless.org/patches/attachaside/)
+5. [Bar height](https://dwm.suckless.org/patches/bar_height/)
+6. [Cool autostart](https://dwm.suckless.org/patches/cool_autostart/)
+7. [Hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
+8. [Move stack](https://dwm.suckless.org/patches/movestack/)
+9. [No borders flicker fix](https://dwm.suckless.org/patches/noborderflicker/)
+10. [Systray](https://dwm.suckless.org/patches/systray/)
