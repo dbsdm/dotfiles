@@ -4,6 +4,7 @@ Run right after clean Arch Linux installation, as user.
 ./install.sh
 ```
 # Desktop Environments and Window Managers
+By default [ly](https://github.com/fairyglade/ly) used as desktop manager.
 Script will ask you which DE or WM should be installed.
 <br/>After ```install.sh``` will finish installing essential packages and performing basic configurations, desktop specific ```install.sh``` will be launched:
 ```
