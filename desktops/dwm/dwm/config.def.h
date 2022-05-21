@@ -11,7 +11,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 17;        /* 0 means that dwm will calculate bar height, >= 1 user_bh */ 
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#282a36";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
@@ -23,7 +23,8 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-    "slstatus", NULL,
+    /* "slstatus", NULL, */
+    "dwmblocks", NULL,
 	"lxsession", NULL,
 	"nm-applet", NULL,
 	"betterlockscreen", "-w", NULL,
@@ -72,7 +73,7 @@ static const Rule rules[] = {
 	{ "Nitrogen",        NULL , NULL,           0,            1,           - 1},
 	{ ".exe",            NULL , NULL,           0,            1,           - 1},
 	{ "XTerm",           NULL , NULL,           0,            1,           - 1},
-	{ "Kitty",           NULL , NULL,           0,            1,           - 1},
+	{ "kitty",           NULL , NULL,           0,            1,           - 1},
 };
 
 /* layout(s) */
