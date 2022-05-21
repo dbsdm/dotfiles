@@ -30,6 +30,8 @@ bo.undofile = true
 vg.user_emmet_leader_key = "<C-Z>" -- trailing ',' required
 vg.gruvbox_transparent_bg = 1
 vg.which_key_centered = 0
+vg.floaterm_width = 0.8
+vg.floaterm_height = 0.6
 
 --misc
 vim.cmd [[filetype plugin on]]

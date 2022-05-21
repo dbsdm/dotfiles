@@ -31,7 +31,8 @@ wk.register({
     },
     c = {
         name = "COMPILE and/or RUN",
-        p = { ":w <bar> FloatermNew --autoclose=0 python3 %<cr>", "Run file with Python3" }
+        p = { ":w <bar> FloatermNew --autoclose=0 python3 %<cr>", "Run file with Python3" },
+        c = { ":w <bar> FloatermNew --autoclose=0 cargo run<cr>", "Build and run with Cargo" }
     },
     e = { ":NvimTreeToggle<cr>", "FILE TREE" },
     l = {
@@ -51,6 +52,7 @@ wk.register({
     u = {
         name = "UTILITIES",
         b = { ":w <bar> !python3 -m black %:p<cr>", "save & run Black" },
+        c = { ":w <bar> !cargo fmt<cr>", "save & run CargoFmt" },
         p = { ":w <bar> !npx prettier --write %:p<cr>", "save & run Prettier" },
         f = { ":w <bar> !flake8 --ignore E501 %:p<cr>", "save & run Flake8" },
     },
