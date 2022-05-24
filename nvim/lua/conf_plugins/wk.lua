@@ -56,6 +56,7 @@ wk.register({
         p = { ":w <bar> !npx prettier --write %:p<cr>", "save & run Prettier" },
         f = { ":w <bar> !flake8 --ignore E501 %:p<cr>", "save & run Flake8" },
     },
-    ["t"] = "which_key_ignore"
+    ["t"] = "which_key_ignore",
+    z = { ":ZenMode<cr>", "ZEN MODE" }
 }, { prefix = "<leader>" })
 
