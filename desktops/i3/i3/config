@@ -63,8 +63,7 @@ set $right l
 floating_modifier Mod4
 
 # start a terminal
-# bindsym Mod4+Return exec kitty -e tmux new-session -ADs def
-bindsym Mod4+Return exec kitty
+bindsym Mod4+Return exec kitty -e tmux new-session -ADs def
 
 # kill focused window
 bindsym Mod4+Shift+q kill
