@@ -85,18 +85,32 @@ return require("packer").startup(function()
     }
 
 
+    ------------------------------- THEMES -----------------------------------
+
+    -- colorful
+    use "morhetz/gruvbox"
+    use "Mofiqul/dracula.nvim"
+    -- colorles
+        -- top
+        use "zaki/zazen"
+        use "Lokaltog/vim-monotone"
+        use "nikolvs/vim-sunbather"
+        use "jaredgorski/fogbell.vim"
+        use "kadekillary/skull-vim"
+        use "davidosomething/vim-colors-meh"
+        use "andreypopp/vim-colors-plain"
+        use "axvr/photon.vim"
+
     ------------------------------- VISUALS ----------------------------------
 
-    -- gruvbox theme
-    use "morhetz/gruvbox"
-    -- dracula theme
-    use "Mofiqul/dracula.nvim"
     -- lualine
     use "nvim-lualine/lualine.nvim"
     -- treesitter
     use "nvim-treesitter/nvim-treesitter"
     -- highlight hex and rgb color codes
     use "lilydjwg/colorizer"
+    -- zen mode
+    use "folke/zen-mode.nvim"
     -- tabline
     use {
         "alvarosevilla95/luatab.nvim",
