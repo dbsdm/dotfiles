@@ -63,7 +63,8 @@ set $right l
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec alacritty
+# bindsym Mod4+Return exec kitty -e tmux new-session -ADs def
+bindsym Mod4+Return exec kitty
 
 # kill focused window
 bindsym Mod4+Shift+q kill
@@ -212,15 +213,16 @@ for_window [title="Wine"]                   floating enable, move position cente
 for_window [class="cantata"]                floating enable, move position center
 for_window [class="KeePassXC"]              floating enable, move position center
 for_window [class="XTerm"]                  floating enable, move position center
-for_window [class="kitty"]                  floating enable, move position center
+for_window [class="Alacritty"]              floating enable, move position center
 
-for_window [class="Pavucontrol"]            resize set 640 480
-for_window [class="Nitrogen"]               resize set 640 480
-for_window [class="kitty"]                  resize set 640 480
+
+for_window [class="Pavucontrol"]            resize set 800 600
+for_window [class="Nitrogen"]               resize set 800 600
+for_window [class="Alacritty"]              resize set 800 600
 
 for_window [class="firefox"]                focus
 for_window [class="Brave-browser"]          focus
-for_window [class="Alacritty"]              focus
+for_window [class="kitty"]                  focus
 for_window [class="code-oss"]               focus
 for_window [class="GitKraken"]              focus
 for_window [class="Pavucontrol"]            focus
@@ -259,7 +261,7 @@ for_window [class="obs"]                    focus
 
 assign [class="firefox"]                    →  $ws1
 assign [class="Brave-browser"]              →  $ws1
-assign [class="Alacritty"]                  →  $ws2
+assign [class="kitty"]                      →  $ws2
 assign [class="code-oss"]                   →  $ws2
 assign [class="GitKraken"]                  →  $ws2
 assign [class="KeePassXC"]                  →  $ws3
@@ -322,10 +324,10 @@ bindsym Mod4+r mode "resize"
 
 
 # class                 border  bground text    indicator child_border
-client.focused          #bd93f9 #bd93f9 #000000 #50fa7b   #bd93f9
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.focused          #FF0000 #000000 #FFFFFF #00FF00   #FF0000
+client.focused_inactive #FF0000 #555555 #FFFFFF #00FF00   #FF0000
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.urgent           #FF0000 #FFA500 #FFFFFF #00FF00   #FF0000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF

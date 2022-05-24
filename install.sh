@@ -74,17 +74,12 @@ touch ~/.config/mpd/pid
 mkdir ~/.config/mpd/playlists
 LINK "mpd-notification.conf" "$HOME/.config"
 
-# playerctl daemon
-mkdir -p ~/.config/systemd/user
-LINK "playerctld.service" "$HOME/.config/systemd/user/"
-
 # systemd setup
 sudo systemctl enable ly
 sudo systemctl enable cups
 sudo systemctl enable libvirtd
 systemctl enable --user mpd
 systemctl enable --user mpd-notification
-systemctl enable --user playerctld
 
 # default applications
 bash ./default-apps.sh

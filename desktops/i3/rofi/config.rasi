@@ -6,35 +6,36 @@ configuration {
 }
 
 * {
-    /* Dracula theme colour palette */
-    drac-bgd: #282a36;
-    drac-cur: #44475a;
-    drac-fgd: #f8f8f2;
-    drac-cmt: #6272a4;
-    drac-cya: #8be9fd;
-    drac-grn: #50fa7b;
-    drac-ora: #ffb86c;
-    drac-pnk: #ff79c6;
-    drac-pur: #bd93f9;
-    drac-red: #ff5555;
-    drac-yel: #f1fa8c;
+    col-bgd: #000000;
+    col-brd: #FFFFFF;
+    col-cur: #FFFFFF;
+    col-fgd: #FFFFFF;
+    col-cmt: #FFFFFF;
+    col-cya: #FFFFFF;
+    col-grn: #FF0000;
+    col-ora: #FFA500;
+    col-pnk: #FF0000;
+    col-pur: #FF0000;
+    col-red: #FF0000;
+    col-yel: #FF0000;
 
     font: "JetBrainsMono Nerd Font 12";
 
-    foreground: @drac-fgd;
-    background-color: @drac-bgd;
-    active-background: @drac-pnk;
-    urgent-background: @drac-red;
+    foreground: @col-fgd;
+    background-color: @col-bgd;
+    active-background: @col-pnk;
+    urgent-background: @col-red;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #6272a4;
+    bordercolor: @col-brd;
 }
 
 #window {
     background-color: @background-color;
+    foreground-color: @col-fgd;
     border:           3;
     border-radius: 6;
     border-color: @bordercolor;
@@ -125,11 +126,11 @@ configuration {
 }
 #entry {
     spacing:    0;
-    text-color: @drac-cya;
+    text-color: @col-cya;
 }
 #prompt {
     spacing:    0;
-    text-color: @drac-grn;
+    text-color: @col-grn;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -138,7 +139,7 @@ configuration {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @drac-grn;
+    text-color: @col-grn;
 }
 element-text, element-icon {
     background-color: inherit;
