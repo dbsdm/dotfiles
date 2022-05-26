@@ -4,7 +4,7 @@ mpd-notification-git
 nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 nvim-packer-git
-peazip-qt5-bin
+peazip-gtk2-bin
 skypeforlinux-stable-bin
 ttf-joypixels
 ttf-ms-fonts
