@@ -16,7 +16,7 @@ do
     echo -e "\t$folder"
 done
 
-echo -e "\tminimal (no desktop)\n"
+echo -e "\n\t*minimal => no WM or DE\n"
 read -p "Which configuration should be installed? " configuration
 
 correct=false
