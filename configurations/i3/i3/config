@@ -20,6 +20,7 @@ smart_gaps on
 ##############################################################################
 
 
+exec --no-startup-id xrandr -s 1280x1024
 exec --no-startup-id lxsession
 exec --no-startup-id nm-applet
 # exec --no-startup-id nitrogen --restore
