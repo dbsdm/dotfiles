@@ -9,14 +9,14 @@ LINK(){
 #                           SELECTING CONFIGURATION                          # 
 ##############################################################################
 
-echo -e "Available desktops:\n"
+echo -e "Available configurations:\n"
 configurations=`ls ./configurations/`
 for folder in $configurations
 do
     echo -e "\t$folder"
 done
 
-echo -e "\n\t*minimal => no WM or DE\n"
+echo -e "\n\t* minimal => no WM or DE, only X and basic apps\n"
 read -p "Which configuration should be installed? " configuration
 
 correct=false
