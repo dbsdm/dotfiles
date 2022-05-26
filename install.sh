@@ -39,7 +39,7 @@ sleep 3
 #                      INSTALLING MINIMAL CONFIGURATION                      # 
 ##############################################################################
 
-cd ./configurations/minimal/ && bash ./install.sh $$ cd ../..
+cd ./configurations/minimal/ && bash ./install.sh && cd ../..
 
 ##############################################################################
 #                    INSTALLING ADDITIONAL CONFIGURATIONS                    # 
@@ -49,7 +49,7 @@ if [ $configuration == "minimal" ]; then
     cd ./configurations/minimal/ && fish ./fishcfg.sh
     echo -e "\n\e[32mInstallation finished.\e[0m"
 else
-    cd ./configurations/$configuration/
-    bash ./install.sh
+    cd ./configurations/$configuration/ && bash ./install.sh && cd ../..
     cd ./configurations/minimal/ && fish ./fishcfg.sh
     echo -e "\n\e[32mInstallation finished.\e[0m"
+fi
