@@ -33,7 +33,6 @@ if [ $correct == false ]; then
 fi
 
 echo -e "\nConfiguration will be installed: \e[32m$configuration\e[0m"
-sleep 3
 
 ##############################################################################
 #                      INSTALLING MINIMAL CONFIGURATION                      # 
