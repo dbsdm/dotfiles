@@ -56,6 +56,7 @@ LINK "mpd-notification.conf" "$HOME/.config"
 #                                  SYSTEMD                                   #
 ##############################################################################
 
+yay -S ly
 sudo systemctl enable ly
 sudo systemctl enable cups
 sudo systemctl enable libvirtd
