@@ -17,11 +17,10 @@ sudo pacman -Sy --noconfirm - < pacman.txt
 #                           INSTALLING AUR HELPER                            #
 ##############################################################################
 
-indir=$(pwd)
-sudo rm -rf /opt/yay-git
-sudo git clone https://aur.archlinux.org/yay.git /opt/yay-git
-sudo chown -R db:users /opt/yay-git
-cd /opt/yay-git && yes | makepkg -si && cd $indir
+temp=$(pwd)
+rm -rf ~/yay-git
+git clone https://aur.archlinux.org/yay.git ~/yay-git
+cd ~/yay-git && yes | makepkg -si && cd $indir && rm -rf ~/yay-git
 
 ##############################################################################
 #                          INSTALLING AUR PACKAGES                           #
