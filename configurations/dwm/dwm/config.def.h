@@ -11,11 +11,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 17;        /* 0 means that dwm will calculate bar height, >= 1 user_bh */ 
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
-static const char col_gray1[]       = "#282a36";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#bd93f9";
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#000000";
+static const char col_gray3[]       = "#FFFFFF";
+static const char col_gray4[]       = "#000000";
+static const char col_cyan[]        = "#FF0000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -23,8 +23,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-    /* "slstatus", NULL, */
-    "dwmblocks", NULL,
+    "slstatus", NULL,
 	"lxsession", NULL,
 	"nm-applet", NULL,
 	"betterlockscreen", "-w", NULL,
@@ -43,7 +42,7 @@ static const Rule rules[] = {
 	/* class         instance title       tags mask     isfloating   monitor */
 	{ "firefox",         NULL , NULL ,          1 << 0,       0,           - 1},
 	{ "Brave-browser",   NULL , NULL ,          1 << 0,       0,           - 1},
-	{ "Alacritty",       NULL , NULL ,          1 << 1,       0,           - 1},
+	{ "kitty",           NULL , NULL ,          1 << 1,       0,           - 1},
 	{ "code-oss",        NULL , NULL ,          1 << 1,       0,           - 1},
 	{ "GitKraken",       NULL , NULL ,          1 << 1 ,      0,           - 1},
 	{ "KeePassXC",       NULL , NULL ,          1 << 2,       0,           - 1},
@@ -73,7 +72,7 @@ static const Rule rules[] = {
 	{ "Nitrogen",        NULL , NULL,           0,            1,           - 1},
 	{ ".exe",            NULL , NULL,           0,            1,           - 1},
 	{ "XTerm",           NULL , NULL,           0,            1,           - 1},
-	{ "kitty",           NULL , NULL,           0,            1,           - 1},
+	{ "Alacritty",       NULL , NULL,           0,            1,           - 1},
 };
 
 /* layout(s) */
@@ -101,7 +100,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", "-e", "tmux", "new-session", "-ADs", "def", NULL };
+static const char *webcmd[]  = { "firefox", NULL };
 static const char *mutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *volucmd[]  = { "pactl", "set-sink-volume", "0", "+1%", NULL };
 static const char *voldcmd[]  = { "pactl", "set-sink-volume", "0", "-1%", NULL };
@@ -115,37 +115,35 @@ static const char *sscmd[]  = { "flameshot", "gui", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.01} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.01} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_q,      setlayout,      {0} },
-	{ MODKEY,                       XK_f,      togglefloating, {0} },
-	{ MODKEY,                       XK_Right,  viewnext,       {0} },
-	{ MODKEY,                       XK_Left,   viewprev,       {0} },
-	{ MODKEY,                       XK_Tab,    viewnext,       {0} },
+	{ MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_backslash,   spawn,          {.v = webcmd } },
+	{ MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_h,           setmfact,       {.f = -0.01} },
+	{ MODKEY,                       XK_l,           setmfact,       {.f = +0.01} },
+	{ MODKEY,                       XK_BackSpace,   setlayout,      {0} },
+	{ MODKEY,                       XK_f,           togglefloating, {0} },
+	{ MODKEY,                       XK_Right,       viewnext,       {0} },
+	{ MODKEY,                       XK_Left,        viewprev,       {0} },
+	{ MODKEY,                       XK_Tab,         viewnext,       {0} },
 
-	{ MODKEY|Mod1Mask,              XK_i,      spawn,          {.v = volucmd } },
-	{ MODKEY|Mod1Mask,              XK_d,      spawn,          {.v = voldcmd } },
-	{ MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = mutecmd } },
-	{ MODKEY|Mod1Mask,              XK_t,      spawn,          {.v = mpctogglecmd } },
-	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = mpcnextcmd } },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = mpcprevcmd } },
+	{ MODKEY|Mod1Mask,              XK_i,           spawn,          {.v = volucmd } },
+	{ MODKEY|Mod1Mask,              XK_d,           spawn,          {.v = voldcmd } },
+	{ MODKEY|Mod1Mask,              XK_m,           spawn,          {.v = mutecmd } },
+	{ MODKEY|Mod1Mask,              XK_t,           spawn,          {.v = mpctogglecmd } },
+	{ MODKEY|Mod1Mask,              XK_n,           spawn,          {.v = mpcnextcmd } },
+	{ MODKEY|Mod1Mask,              XK_p,           spawn,          {.v = mpcprevcmd } },
 
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          {.v = sscmd } },
+	{ MODKEY|Mod1Mask,              XK_s,           spawn,          {.v = sscmd } },
 
-	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
-	{ MODKEY|ShiftMask,             XK_Tab,    viewprev,       {0} },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = mpcpausecmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_j,           movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,           movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_q,           killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_f,           togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_Tab,         viewprev,       {0} },
+	{ MODKEY|ShiftMask,             XK_l,           spawn,          {.v = mpcpausecmd } },
+	{ MODKEY|ShiftMask,             XK_l,           spawn,          {.v = lockcmd } },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
