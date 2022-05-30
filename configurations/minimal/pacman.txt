@@ -55,6 +55,7 @@ pamixer
 pavucontrol
 playerctl
 print-manager
+procs
 pulseaudio
 python
 python-pip
