@@ -1,8 +1,13 @@
-require 'zen-mode'.setup{
+local status_ok, zen = pcall(require, "zen-mode")
+if not status_ok then
+	return
+end
+
+zen.setup{
     window = {
         backdrop = 1,
         width = 100,
-        height = .8,
+        height = .85,
         options = {
             --signcolumn = "no", -- disable signcolumn
             --number = false, -- disable number column

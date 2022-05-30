@@ -55,7 +55,7 @@ return require("packer").startup(function()
     -- comment and uncomment with one map
     use "tpope/vim-commentary"
     -- floating terminal
-    use "voldikss/vim-floaterm"
+    use "akinsho/toggleterm.nvim"
     -- autopairs
     use {
         "windwp/nvim-autopairs",
@@ -108,7 +108,7 @@ return require("packer").startup(function()
     -- treesitter
     use "nvim-treesitter/nvim-treesitter"
     -- highlight hex and rgb color codes
-    use "lilydjwg/colorizer"
+    use "norcalli/nvim-colorizer.lua"
     -- zen mode
     use "folke/zen-mode.nvim"
     -- tabline
@@ -121,11 +121,6 @@ return require("packer").startup(function()
         "winston0410/range-highlight.nvim",
         requires = "winston0410/cmd-parser.nvim",
         config = function() require("range-highlight").setup() end
-    }
-    -- lightbulb symbol for code actions
-    use {
-        "kosayoda/nvim-lightbulb",
-        config = function() require("nvim-lightbulb").setup() end
     }
     -- dimming code using treesitter
     use {
@@ -142,8 +137,6 @@ return require("packer").startup(function()
 
     -- gitsigns
     use "lewis6991/gitsigns.nvim"
-    -- gitblame
-    use "f-person/git-blame.nvim"
 
     --------------------------- LSP & COMPLETION -----------------------------
 
