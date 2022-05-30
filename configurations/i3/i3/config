@@ -20,16 +20,15 @@ smart_gaps on
 ##############################################################################
 
 
-exec --no-startup-id xrandr -s 1280x1024
 exec --no-startup-id lxsession
 exec --no-startup-id nm-applet
-# exec --no-startup-id nitrogen --restore
-exec --no-startup-id betterlockscreen -w
 exec --no-startup-id conky
 exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id polybar
+exec --no-startup-id betterlockscreen -w
 exec --no-startup-id xset r rate 200 30
+exec --no-startup-id xrandr -s 1280x1024 -r 75
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
 
 
@@ -63,7 +62,8 @@ set $right l
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
 
-# start a terminal
+# start an app
+bindsym Mod4+backslash exec firefox
 bindsym Mod4+Return exec kitty -e tmux new-session -ADs def
 
 # kill focused window
@@ -210,8 +210,6 @@ for_window [class="Nitrogen"]               floating enable, move position cente
 for_window [class=".exe"]                   floating enable, move position center
 for_window [title="Winetricks"]             floating enable, move position center
 for_window [title="Wine"]                   floating enable, move position center
-for_window [class="cantata"]                floating enable, move position center
-for_window [class="KeePassXC"]              floating enable, move position center
 for_window [class="XTerm"]                  floating enable, move position center
 for_window [class="Alacritty"]              floating enable, move position center
 for_window [class="Veracrypt"]              floating enable, move position center
@@ -262,11 +260,8 @@ for_window [class="obs"]                    focus
 
 
 assign [class="firefox"]                    →  $ws1
-assign [class="Brave-browser"]              →  $ws1
 assign [class="kitty"]                      →  $ws2
 assign [class="code-oss"]                   →  $ws2
-assign [class="GitKraken"]                  →  $ws2
-assign [class="KeePassXC"]                  →  $ws3
 assign [class="GParted"]                    →  $ws3
 assign [class="Thunar"]                     →  $ws3
 assign [class="Pcmanfm"]                    →  $ws3
@@ -274,14 +269,10 @@ assign [class="Veracrypt"]                  →  $ws3
 assign [class="okular"]                     →  $ws4
 assign [class="Zathura"]                    →  $ws4
 assign [title="LibreOffice"]                →  $ws4
-assign [class="Galculator"]                 →  $ws4
 assign [class="Virt-manager"]               →  $ws5
 assign [class="TelegramDesktop"]            →  $ws6
 assign [class="Skype"]                      →  $ws6
-assign [class="Rhythmbox"]                  →  $ws7
 assign [class="cantata"]                    →  $ws7
-assign [class="deemix-gui"]                 →  $ws7
-assign [class="nuclear"]                    →  $ws7
 assign [class="mpv"]                        →  $ws8
 assign [class="Popcorn-Time"]               →  $ws8
 assign [class="Viewnior"]                   →  $ws9
@@ -292,33 +283,6 @@ assign [title="Wine"]                       →  $ws10
 assign [class="Steam"]                      →  $ws11
 assign [class="Flashplayer"]                →  $ws11
 assign [class="obs"]                        →  $ws12
-
-
-##############################################################################
-#                                  MODES                                     #
-##############################################################################
-
-
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or Mod4+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Mod4+r mode "default"
-}
-
-bindsym Mod4+r mode "resize"
 
 
 ##############################################################################
