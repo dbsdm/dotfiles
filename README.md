@@ -21,12 +21,12 @@ New configuration will be automatically picked up and offered during installatio
 
 # Available configurations
 ### i3
-**Theme:** Dracula<br/>
+**Theme:** Pure Black (zazen fork)<br/>
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** rofi, polybar, dunst, conky<br/>
 
 ### dwm
-**Theme:** Dracula<br/>
+**Theme:** Pure Black (zazen fork)<br/>
 **Font:** Jet Brains Mono Nerd Font<br/>
 **Environment:** dmenu, slstatus, dunst, conky<br/>
 **Applied patches:**
