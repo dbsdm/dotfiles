@@ -213,15 +213,18 @@ for_window [title="Wine"]                   floating enable, move position cente
 for_window [class="XTerm"]                  floating enable, move position center
 for_window [class="Alacritty"]              floating enable, move position center
 for_window [class="Veracrypt"]              floating enable, move position center
+for_window [class="KeePassXC"]              floating enable, move position center
 
 
 for_window [class="Pavucontrol"]            resize set 800 600
 for_window [class="Nitrogen"]               resize set 800 600
 for_window [class="Alacritty"]              resize set 800 600
+for_window [class="KeePassXC"]              resize set 800 600
 
 for_window [class="firefox"]                focus
 for_window [class="Brave-browser"]          focus
 for_window [class="kitty"]                  focus
+for_window [class="DBeaver"]                focus
 for_window [class="code-oss"]               focus
 for_window [class="GitKraken"]              focus
 for_window [class="Pavucontrol"]            focus
@@ -261,6 +264,7 @@ for_window [class="obs"]                    focus
 
 assign [class="firefox"]                    →  $ws1
 assign [class="kitty"]                      →  $ws2
+assign [class="DBeaver"]                    →  $ws2
 assign [class="code-oss"]                   →  $ws2
 assign [class="GParted"]                    →  $ws3
 assign [class="Thunar"]                     →  $ws3
