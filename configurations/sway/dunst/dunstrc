@@ -1,0 +1,114 @@
+[global]
+    ##########################################################################
+    #                               GENERAL                                  #
+    ##########################################################################
+
+    monitor = 0
+    follow = none
+    width = (0,500) # <-static, for dynamic use width=(0,300)
+    height = 300
+    origin = top-right
+    offset = 10x30
+    scale = 0
+    notification_limit = 0 # 0 for unlimited
+    indicate_hidden = yes
+
+    ##########################################################################
+    #                            PROGRESS BAR                                #
+    ##########################################################################
+
+    progress_bar = true # appears when progress hint is passed
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    ##########################################################################
+    #                               VISUALS                                  #
+    ##########################################################################
+
+    transparency = 0 # range 0 to 100, only with compositor
+    separator_height = 2
+    padding = 8 # between text and separator
+    horizontal_padding = 8 # between text and separator
+    text_icon_padding = 0
+    frame_width = 3
+    frame_color = "#FFFFFF"
+    separator_color = frame # auto, foreground, frame, any value
+    sort = yes
+    idle_threshold = 120 # seconds of inactivity, 0 for disable
+    corner_radius = 5
+
+    ##########################################################################
+    #                                 TEXT                                   #
+    ##########################################################################
+
+    font = JetBrainsMono Nerd Font 10
+    line_height = 0 # spacing between lines
+    markup = full # html markup using tags (pango)
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    format = "<b>%s</b>\n%b\n%p"
+    alignment = left # left, center, right
+    vertical_alignment = center # top, center, bottom
+    show_age_threshold = 60
+    ellipsize = middle # start, middle, end
+    ignore_newline = no # ignore \n
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ##########################################################################
+    #                                ICONS                                   #
+    ##########################################################################
+
+    icon_position = left # left, right, top, off
+    min_icon_size = 16
+    max_icon_size = 64
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    ##########################################################################
+    #                                 MISC                                   #
+    ##########################################################################
+
+    sticky_history = yes
+    history_length = 20
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    timeout = 10
+    # Icon for notifications with low urgency, uncomment to enable
+    #new_icon = /path/to/icon
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    timeout = 10
+    # Icon for notifications with normal urgency, uncomment to enable
+    #new_icon = /path/to/icon
+
+[urgency_critical]
+    background = "#FFA500"
+    foreground = "#000000"
+    frame_color = "#FFFFFF"
+    timeout = 0
+    # Icon for notifications with critical urgency, uncomment to enable
+    #new_icon = /path/to/icon
+

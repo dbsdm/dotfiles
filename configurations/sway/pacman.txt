@@ -1,0 +1,12 @@
+bemenu-wayland
+dunst
+gammastep
+kvantum
+libappindicator-gtk3
+lxappearance
+lxsession
+sway
+swaybg
+swaylock
+waybar
+wl-clipboard

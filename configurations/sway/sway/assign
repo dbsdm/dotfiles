@@ -1,0 +1,44 @@
+assign [class="firefox"]                             → $ws1
+
+assign [app_id="kitty"]                              → $ws2
+assign [app_id="DBeaver"]                            → $ws2
+assign [class="code-oss"]                            → $ws2
+
+assign [app_id="org.kde.okular"]                     → $ws3
+assign [app_id="org.pwmt.zathura"]                   → $ws3
+assign [title="LibreOffice"]                         → $ws3
+
+
+assign [app_id="telegramdesktop"]                    → $ws4
+assign [class="Thunderbird"]                         → $ws4
+assign [class="Signal"]                              → $ws4
+assign [class="Skype"]                               → $ws4
+
+assign [app_id="cantata"]                            → $ws5
+
+assign [class="mpv"]                                 → $ws6
+assign [class="Popcorn-Time"]                        → $ws6
+
+assign [class="Viewnior"]                            → $ws7
+assign [class="Gimp"]                                → $ws7
+
+assign [class="GParted"]                             → $ws8
+assign [app_id="thunar"]                             → $ws8
+assign [class="Pcmanfm"]                             → $ws8
+assign [app_id="veracrypt"]                          → $ws8
+assign [app_id="gedit"]                              → $ws8
+
+assign [app_id="virt-manager"]                       → $ws9
+
+assign [class=".exe"]                                → $ws10
+assign [title="Winetricks"]                          → $ws10
+assign [title="Wine"]                                → $ws10
+
+assign [class="Steam"]                               → $ws11
+assign [class="Flashplayer"]                         → $ws11
+
+assign [app_id="com.obsproject.Studio"]              → $ws12
+
+assign [app_id="org.keepassxc.KeePassXC"]            → $ws13
+
+assign [app_id="org.qbittorrent.qBittorrent"] → $ws14

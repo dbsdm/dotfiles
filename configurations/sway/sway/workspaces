@@ -1,0 +1,49 @@
+set $ws1  "1:web"
+set $ws2  "2:dev"
+set $ws3  "3:doc"
+set $ws4  "4:msg"
+set $ws5  "5:mus"
+set $ws6  "6:vid"
+set $ws7  "7:gfx"
+set $ws8  "8:sys"
+set $ws9  "9:virt"
+set $ws10 "10:wine"
+set $ws11 "11:game"
+set $ws12 "12:recd"
+set $ws13 "13:kpxc"
+set $ws14 "13:torr"
+
+bindsym Mod4+Tab workspace next
+bindsym Mod4+Shift+Tab workspace prev
+
+bindsym Mod4+1 workspace number $ws1
+bindsym Mod4+2 workspace number $ws2
+bindsym Mod4+3 workspace number $ws3
+bindsym Mod4+4 workspace number $ws4
+bindsym Mod4+5 workspace number $ws5
+bindsym Mod4+6 workspace number $ws6
+bindsym Mod4+7 workspace number $ws7
+bindsym Mod4+8 workspace number $ws8
+bindsym Mod4+9 workspace number $ws9
+bindsym Mod4+0 workspace number $ws10
+bindsym Mod4+Mod1+1 workspace number $ws11
+bindsym Mod4+Mod1+2 workspace number $ws12
+bindsym Mod4+Mod1+3 workspace number $ws13
+bindsym Mod4+Mod1+4 workspace number $ws14
+bindsym Mod4+Mod1+5 workspace number $ws15
+
+bindsym Mod4+Shift+1 move container to workspace number $ws1
+bindsym Mod4+Shift+2 move container to workspace number $ws2
+bindsym Mod4+Shift+3 move container to workspace number $ws3
+bindsym Mod4+Shift+4 move container to workspace number $ws4
+bindsym Mod4+Shift+5 move container to workspace number $ws5
+bindsym Mod4+Shift+6 move container to workspace number $ws6
+bindsym Mod4+Shift+7 move container to workspace number $ws7
+bindsym Mod4+Shift+8 move container to workspace number $ws8
+bindsym Mod4+Shift+9 move container to workspace number $ws9
+bindsym Mod4+Shift+0 move container to workspace number $ws10
+bindsym Mod4+Mod1+Shift+1 move container to workspace number $ws11
+bindsym Mod4+Mod1+Shift+2 move container to workspace number $ws12
+bindsym Mod4+Mod1+Shift+3 move container to workspace number $ws13
+bindsym Mod4+Mod1+Shift+4 move container to workspace number $ws14
+bindsym Mod4+Mod1+Shift+5 move container to workspace number $ws15

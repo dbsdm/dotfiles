@@ -1,0 +1,18 @@
+for_window [app_id="galculator"]            floating enable, move position center
+for_window [app_id="pavucontrol"]           floating enable, move position center
+for_window [app_id="mpv"]                   floating enable, move position center
+for_window [class=".exe"]                   floating enable, move position center
+for_window [title="Winetricks"]             floating enable, move position center
+for_window [title="Wine"]                   floating enable, move position center
+for_window [class="XTerm"]                  floating enable, move position center
+for_window [app_id="Alacritty"]             floating enable, move position center
+for_window [app_id="veracrypt"]             floating enable, move position center
+for_window [app_id="peazip"]                floating enable, move position center
+
+for_window [app_id="pavucontrol"]           resize set 800 600
+for_window [class="Nitrogen"]               resize set 800 600
+for_window [class="XTerm"]                  resize set 800 600
+for_window [app_id="Alacritty"]             resize set 800 600
+for_window [app_id="peazip"]                resize set 800 600
+
+for_window [app_id="virt-manager"]          layout tabbed

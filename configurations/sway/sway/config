@@ -1,0 +1,47 @@
+##############################################################################
+#                                GENERAL                                     #
+##############################################################################
+
+font pango:JetBrainsMono Nerd Font 10
+hide_edge_borders smart
+default_border pixel 1
+default_floating_border pixel 1
+gaps inner 0
+gaps outer 0
+
+##############################################################################
+#                               AUTOSTART                                    #
+##############################################################################
+
+exec --no-startup-id dunst
+exec --no-startup-id waybar
+exec --no-startup-id lxsession
+exec --no-startup-id gammastep -l 50.38:30.79 -t 6500:4500 -m wayland
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Material Black'
+exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Kora'
+
+##############################################################################
+#                                   IO                                       #
+##############################################################################
+
+output VGA-1 mode 1280x1024@75Hz
+output VGA-1 bg ~/dotfiles/walls/planet-1990273.jpg fill
+input "type:keyboard" { 
+    xkb_model pc105
+    xkb_layout us,ru,ua
+    xkb_options grp:win_space_toggle,caps:ctrl_modifier
+    repeat_delay 200
+    repeat_rate 30
+}
+
+##############################################################################
+#                                 INCLUDE                                    #
+##############################################################################
+
+include ./maps
+include ./audio
+include ./movement
+include ./workspaces
+include ./rules
+include ./assign
+include ./colors

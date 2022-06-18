@@ -1,0 +1,51 @@
+{
+    "position": "bottom",
+    "height": 15,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["mpd", "pulseaudio", "cpu", "memory", "clock", "tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+    },
+    "mpd": {
+        "port": 8888,
+        "format": "{artist} - {title}",
+        "format-disconnected": "mpd offline",
+        "format-stopped": "",
+        "interval": 3,
+        "on-click": "mpc --port=8888 toggle",
+        "on-click-right": "cantata",
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 5
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%H:%M %d-%m-%Y}"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "{usage}%",
+    },
+    "memory": {
+        "interval": 5,
+        "format": "{}%",
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+
+        "format": "墳 {volume}% {format_source}",
+        "format-muted": "婢 {format_source}",
+
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+    },
+}
+

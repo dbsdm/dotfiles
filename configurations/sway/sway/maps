@@ -1,0 +1,19 @@
+set $browser firefox
+set $terminal kitty
+
+# start browser
+bindsym Mod4+backslash exec $browser
+# start terminal
+bindsym Mod4+Return exec $terminal
+# kill focused window
+bindsym Mod4+Shift+q kill
+# start bemenu
+bindsym Mod4+d exec bemenu-run -b -H 25 --fn "JetBrainsMono Nerd Font 10" --tb "#000000" --tf "#ffffff" --fb "#000000" --ff "#ffffff" --nb "#000000" --nf "#ffffff" --hb "#000000" --hf "#00ff00"
+# lock screen
+bindsym Mod4+Mod1+l exec "mpc --port=8888 pause && swaylock -F -c 000000"
+# screenshot
+bindsym Mod4+Mod1+s exec "grimshot save area"
+# colorpicker
+bindsym Mod4+Mod1+c exec "wl-color-picker clipboard"
+# reload sway config
+bindsym Mod4+Shift+r reload
