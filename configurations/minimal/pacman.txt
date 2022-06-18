@@ -3,6 +3,7 @@ alacritty
 atool
 base
 base-devel
+bleachbit
 bridge-utils
 btop
 cantata
@@ -72,6 +73,7 @@ steam
 sudo
 telegram-desktop
 thunar
+thunderbird
 tmux
 ueberzug
 v4l2loopback-dkms
