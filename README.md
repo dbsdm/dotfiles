@@ -20,6 +20,11 @@ To add new configuration:
 New configuration will be automatically picked up and offered during installation.
 
 # Available configurations
+### sway
+**Theme:** Pure Black (zazen fork)<br/>
+**Font:** Jet Brains Mono Nerd Font<br/>
+**Environment:** bemenu, waybar, dunst<br/>
+
 ### i3
 **Theme:** Pure Black (zazen fork)<br/>
 **Font:** Jet Brains Mono Nerd Font<br/>
