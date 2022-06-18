@@ -1,6 +1,8 @@
 conky
 dunst
+gpick
 i3-gaps
+kvantum
 lxappearance
 lxsession
 network-manager-applet
