@@ -1,17 +1,3 @@
---     c = {
---         name = "COMPILE and/or RUN",
---         p = { ":w <bar> FloatermNew --autoclose=0 python3 %<cr>", "Run file with Python3" },
---         c = { ":w <bar> FloatermNew --autoclose=0 cargo run<cr>", "Build and run with Cargo" }
---     },
---     u = {
---         name = "UTILITIES",
---         b = { ":w <bar> !python3 -m black %:p<cr>", "save & run Black" },
---         c = { ":w <bar> !cargo fmt<cr>", "save & run CargoFmt" },
---         p = { ":w <bar> !npx prettier --write %:p<cr>", "save & run Prettier" },
---         f = { ":w <bar> !flake8 --ignore E501 %:p<cr>", "save & run Flake8" },
---     },
---     z = { ":ZenMode<cr>", "ZEN MODE" }
-
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
     return
@@ -26,7 +12,7 @@ local setup = {
             suggestions = 20, -- how many suggestions should be shown in the list?
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-        -- No actual key bindings are created
+        -- No actual key bindings are created presets = {
         presets = {
             operators = false, -- help for operators like d, y, ... and registers them for motion
             motions = true, -- adds help for motions
@@ -99,7 +85,6 @@ local mappings = {
     },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
-    ["q"] = { "<cmd>q!<CR>", "Quit" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {
@@ -194,12 +179,14 @@ local mappings = {
         b = { "<cmd>w <bar> !python3 -m black %:p<cr>", "Save & format with Black" },
         c = { "<cmd>w <bar> !cargo fmt<cr>", "Save & format with Cargo fmt" },
         f = { "<cmd>w <bar> !flake8 --ignore E501 %:p<cr>", "Save & run Flake8" },
+        p = { "<cmd>w <bar> !npx prettier --write --tab-width 4 %<cr>", "Save & run Prettier" },
     },
     r = {
         name = "Run",
         p = { "<cmd>w <bar> TermExec cmd='python3 %'<cr>", "Run with Python3" },
         c = { "<cmd>w <bar> TermExec cmd='cargo run'<cr>", "Build and run with Cargo" }
     },
+    z = { ":ZenMode<cr>", "ZEN MODE" }
 }
 
 which_key.setup(setup)

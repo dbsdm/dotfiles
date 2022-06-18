@@ -16,6 +16,12 @@ smart_gaps on
 
 
 ##############################################################################
+#                                 MIME                                       #
+##############################################################################
+
+exec --no-startup-id xdg-settings set default-web-browser firefox.desktop
+
+##############################################################################
 #                               AUTOSTART                                    #
 ##############################################################################
 
@@ -31,11 +37,30 @@ exec --no-startup-id xset r rate 200 30
 exec --no-startup-id xrandr -s 1280x1024 -r 75
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
 
+############################################################################## DEFAULTS                                    #
+##############################################################################
+
+set $browser firefox
+set $terminal kitty -e tmux new-session -ADs def
 
 ##############################################################################
 #                                  MAPS                                      #
 ##############################################################################
 
+# Set movement keys
+set $up k
+set $down j
+set $left h
+set $right l
+
+# launch
+bindsym Mod4+backslash exec $browser
+bindsym Mod4+Return exec $terminal
+
+# kill focused window, unless locked
+bindsym Mod4+Shift+q exec j4-persist kill
+# toggle container lock
+bindsym Mod4+Shift+g exec j4-persist toggle
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
@@ -53,24 +78,8 @@ bindsym Mod1+Mod4+t exec mpc --port=8888 toggle
 bindsym Mod1+Mod4+n exec mpc --port=8888 next
 bindsym Mod1+Mod4+p exec mpc --port=8888 prev
 
-# Set movement keys
-set $up k
-set $down j
-set $left h
-set $right l
-
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
-
-# start an app
-bindsym Mod4+backslash exec firefox
-bindsym Mod4+Return exec kitty -e tmux new-session -ADs def
-
-# kill focused window
-bindsym Mod4+Shift+q kill
-
-# start dmenu (a program launcher)
-# bindsym Mod4+d exec "dmenu_run -sb '#F0C674' -sf '#000000' -p ''"
 
 # start rofi (a program launcher)
 bindsym Mod4+d exec "rofi -show drun"
@@ -84,6 +93,8 @@ bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/
 bindsym Mod4+Mod1+l exec mpc --port=8888 pause && betterlockscreen -l
 # screenshot
 bindsym Mod1+Mod4+s exec flameshot gui
+# colorpicker
+bindsym Mod1+Mod4+c exec "killall gpick ; gpick -s"
 
 # change focus
 bindsym Mod4+$left focus left
@@ -142,7 +153,7 @@ bindsym Mod4+minus scratchpad show
 ##############################################################################
 
 
-set $ws1 "1:www"
+set $ws1 "1:web"
 set $ws2 "2:dev"
 set $ws3 "3:sys"
 set $ws4 "4:doc"
@@ -154,7 +165,7 @@ set $ws9 "9:gfx"
 set $ws10 "10:wine"
 set $ws11 "11:game"
 set $ws12 "12:rec"
-set $ws13 "13"
+set $ws13 "13:pass"
 set $ws14 "14"
 set $ws15 "15"
 
@@ -204,7 +215,6 @@ bindsym Mod4+Mod1+Shift+5 move container to workspace number $ws15
 
 for_window [class="Galculator"]             floating enable, move position center
 for_window [class="Pavucontrol"]            floating enable, move position center
-for_window [class="Virt-manager"]           floating enable, move position center
 for_window [class="mpv"]                    floating enable, move position center
 for_window [class="Nitrogen"]               floating enable, move position center
 for_window [class=".exe"]                   floating enable, move position center
@@ -213,13 +223,15 @@ for_window [title="Wine"]                   floating enable, move position cente
 for_window [class="XTerm"]                  floating enable, move position center
 for_window [class="Alacritty"]              floating enable, move position center
 for_window [class="Veracrypt"]              floating enable, move position center
-for_window [class="KeePassXC"]              floating enable, move position center
+for_window [class="PeaZip"]                 floating enable, move position center
 
 
 for_window [class="Pavucontrol"]            resize set 800 600
 for_window [class="Nitrogen"]               resize set 800 600
 for_window [class="Alacritty"]              resize set 800 600
-for_window [class="KeePassXC"]              resize set 800 600
+for_window [class="PeaZip"]                 resize set 800 600
+
+for_window [class="Virt-manager"]           layout tabbed
 
 for_window [class="firefox"]                focus
 for_window [class="Brave-browser"]          focus
@@ -234,12 +246,15 @@ for_window [class="GParted"]                focus
 for_window [class="Thunar"]                 focus
 for_window [class="Pcmanfm"]                focus
 for_window [class="Veracrypt"]              focus
+for_window [class="Gedit"]                  focus
 for_window [class="okular"]                 focus
 for_window [class="Zathura"]                focus
 for_window [title="LibreOffice"]            focus
 for_window [class="Galculator"]             focus
 for_window [class="Virt-manager"]           focus
 for_window [class="TelegramDesktop"]        focus
+for_window [class="Thunderbird"]            focus
+for_window [class="Signal"]                 focus
 for_window [class="Skype"]                  focus
 for_window [class="Rhythmbox"]              focus
 for_window [class="cantata"]                focus
@@ -255,6 +270,7 @@ for_window [title="Wine"]                   focus
 for_window [class="Steam"]                  focus
 for_window [class="Flashplayer"]            focus
 for_window [class="obs"]                    focus
+for_window [class="KeePassXC"]              focus
 
 
 ##############################################################################
@@ -263,6 +279,7 @@ for_window [class="obs"]                    focus
 
 
 assign [class="firefox"]                    →  $ws1
+assign [class="Brave-browser"]              →  $ws1
 assign [class="kitty"]                      →  $ws2
 assign [class="DBeaver"]                    →  $ws2
 assign [class="code-oss"]                   →  $ws2
@@ -270,11 +287,14 @@ assign [class="GParted"]                    →  $ws3
 assign [class="Thunar"]                     →  $ws3
 assign [class="Pcmanfm"]                    →  $ws3
 assign [class="Veracrypt"]                  →  $ws3
+assign [class="Gedit"]                      →  $ws3
 assign [class="okular"]                     →  $ws4
 assign [class="Zathura"]                    →  $ws4
 assign [title="LibreOffice"]                →  $ws4
 assign [class="Virt-manager"]               →  $ws5
 assign [class="TelegramDesktop"]            →  $ws6
+assign [class="Thunderbird"]                →  $ws6
+assign [class="Signal"]                     →  $ws6
 assign [class="Skype"]                      →  $ws6
 assign [class="cantata"]                    →  $ws7
 assign [class="mpv"]                        →  $ws8
@@ -287,6 +307,7 @@ assign [title="Wine"]                       →  $ws10
 assign [class="Steam"]                      →  $ws11
 assign [class="Flashplayer"]                →  $ws11
 assign [class="obs"]                        →  $ws12
+assign [class="KeePassXC"]                  →  $ws13
 
 
 ##############################################################################
@@ -306,4 +327,5 @@ client.background       #FFFFFF
 
 # restart i3 or polybar inplace (preserves your layout/session)
 bindsym Mod4+Shift+r restart 
+bindsym Mod4+p exec "polybar-msg cmd toggle"
 bindsym Mod4+Shift+p exec "polybar-msg cmd restart"
