@@ -44,6 +44,7 @@ linux-headers
 mpc
 mpd
 mpv
+mypaint
 ncdu
 neofetch
 neovim
@@ -73,6 +74,7 @@ steam
 sudo
 telegram-desktop
 thunar
+tumbler
 thunderbird
 tmux
 ueberzug
