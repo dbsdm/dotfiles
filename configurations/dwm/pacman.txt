@@ -6,3 +6,8 @@ lxsession
 network-manager-applet
 nitrogen
 picom
+xclip
+xdo
+xdotool
+xorg
+xorg-xinit

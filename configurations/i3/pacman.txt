@@ -9,3 +9,9 @@ network-manager-applet
 nitrogen
 picom
 rofi
+rofimoji
+xclip
+xdo
+xdotool
+xorg
+xorg-xinit
