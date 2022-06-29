@@ -29,8 +29,7 @@ local setup = {
     key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
-        -- ["<space>"] = "SPC",
-        -- ["<cr>"] = "RET",
+        -- ["<space>"] = "SPC", ["<cr>"] = "RET",
         -- ["<tab>"] = "TAB",
     },
     icons = {
@@ -144,9 +143,9 @@ local mappings = {
             "<cmd>lua vim.diagnostic.goto_prev()<cr>",
             "Prev Diagnostic",
         },
-        l = { "<cmd>lua vim.codelens.run()<cr>", "CodeLens Action" },
-        q = { "<cmd>lua vim.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.buf.rename()<cr>", "Rename" },
+        ll = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Codelens" },
+        lr = { "<cmd>lua vim.lsp.codelens.refresh()<cr>", "Codelens" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -180,6 +179,7 @@ local mappings = {
         c = { "<cmd>w <bar> !cargo fmt<cr>", "Save & format with Cargo fmt" },
         f = { "<cmd>w <bar> !flake8 --ignore E501 %:p<cr>", "Save & run Flake8" },
         p = { "<cmd>w <bar> !npx prettier --write --tab-width 4 %<cr>", "Save & run Prettier" },
+        o = { "<cmd>PyrightOrganizeImports<cr>", "Pyright Organize Imports" },
     },
     r = {
         name = "Run",

@@ -13,5 +13,6 @@ require "user.git-signs"
 require "user.luasnip"
 require "user.which-key"
 require "user.zen-mode"
+-- require "user.rusttools"
 
 require "user.lsp"

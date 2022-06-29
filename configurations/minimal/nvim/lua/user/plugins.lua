@@ -9,10 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "git",
         "clone",
         "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-    }
+        "1", "https://github.com/wbthomason/packer.nvim", install_path, }
     print "Installing packer close and reopen Neovim..."
     vim.cmd [[packadd packer.nvim]]
 end
@@ -30,7 +27,6 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
 end
-
 -- Have packer use a popup window
 packer.init {
     display = {
@@ -84,7 +80,8 @@ return require("packer").startup(function()
     -- colorful
     use "morhetz/gruvbox"
     use "Mofiqul/dracula.nvim"
-    -- colorles
+    use "NLKNguyen/papercolor-theme"
+    -- monotone
         -- top
         use "zaki/zazen"
         use "Lokaltog/vim-monotone"
@@ -126,6 +123,8 @@ return require("packer").startup(function()
         "folke/which-key.nvim",
         config = function() require("which-key").setup() end
     }
+    -- todo and fixme highlight
+    use "sakshamgupta05/vim-todo-highlight"
 
     --------------------------------- GIT ------------------------------------
 
@@ -147,6 +146,7 @@ return require("packer").startup(function()
     }
     -- collection of snippets for different languages
     use "rafamadriz/friendly-snippets"
+    use "simrat39/rust-tools.nvim"
 
     -------------------------- COMPLETION SOURCES ----------------------------
 

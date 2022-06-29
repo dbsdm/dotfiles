@@ -8,7 +8,7 @@
 
 font pango:JetBrainsMono Nerd Font 10
 hide_edge_borders both
-default_border pixel 2
+default_border pixel 1
 default_floating_border pixel 2
 gaps inner 1
 gaps outer 1
@@ -27,8 +27,6 @@ exec --no-startup-id xdg-settings set default-web-browser firefox.desktop
 
 
 exec --no-startup-id lxsession
-exec --no-startup-id nm-applet
-exec --no-startup-id conky
 exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id polybar
@@ -36,12 +34,12 @@ exec --no-startup-id betterlockscreen -w
 exec --no-startup-id xset r rate 200 30
 exec --no-startup-id xrandr -s 1280x1024 -r 75
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
-
-############################################################################## DEFAULTS                                    #
+############################################################################## 
+#                                DEFAULTS                                    #
 ##############################################################################
 
 set $browser firefox
-set $terminal kitty -e tmux new-session -ADs def
+set $terminal kitty
 
 ##############################################################################
 #                                  MAPS                                      #
@@ -63,17 +61,18 @@ bindsym Mod4+Shift+q exec j4-persist kill
 bindsym Mod4+Shift+g exec j4-persist toggle
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +1% 
+bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioPlay exec mpc --port=8888 toggle
 bindsym XF86AudioNext exec mpc --port=8888 next
 bindsym XF86AudioPrev exec mpc --port=8888 prev
 
 # Audio controls backup for small keyboards
-bindsym Mod1+Mod4+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% 
-bindsym Mod1+Mod4+d exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym Mod1+Mod4+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Mod1+Mod4+i exec pactl set-sink-volume @DEFAULT_SINK@ +1% 
+bindsym Mod1+Mod4+d exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym Mod1+Mod4+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Mod1+Mod4+Shift+m exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym Mod1+Mod4+t exec mpc --port=8888 toggle
 bindsym Mod1+Mod4+n exec mpc --port=8888 next
 bindsym Mod1+Mod4+p exec mpc --port=8888 prev
@@ -85,8 +84,6 @@ floating_modifier Mod4
 bindsym Mod4+d exec "rofi -show drun"
 # emoji picker
 bindsym Mod4+Shift+e exec rofimoji
-# network manager
-bindsym Mod4+Shift+n exec ~/.config/rofi/scripts/rofi-network-manager/rofi-network-manager.sh
 # powermenu
 bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/powermenu
 # lock screen
@@ -147,27 +144,29 @@ bindsym Mod4+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod4+minus scratchpad show
 
+# restart i3 or polybar inplace (preserves your layout/session)
+bindsym Mod4+Shift+r restart 
+bindsym Mod4+p exec "polybar-msg cmd toggle"
+bindsym Mod4+Shift+p exec "polybar-msg cmd restart"
 
 ##############################################################################
 #                               WORKSAPCES                                   #
 ##############################################################################
 
-
-set $ws1 "1:web"
-set $ws2 "2:dev"
-set $ws3 "3:sys"
-set $ws4 "4:doc"
-set $ws5 "5:virt"
-set $ws6 "6:chat"
-set $ws7 "7:mus"
-set $ws8 "8:vid"
-set $ws9 "9:gfx"
+set $ws1  "1:web"
+set $ws2  "2:dev"
+set $ws3  "3:doc"
+set $ws4  "4:msg"
+set $ws5  "5:mus"
+set $ws6  "6:vid"
+set $ws7  "7:gfx"
+set $ws8  "8:sys"
+set $ws9  "9:virt"
 set $ws10 "10:wine"
 set $ws11 "11:game"
-set $ws12 "12:rec"
-set $ws13 "13:pass"
-set $ws14 "14"
-set $ws15 "15"
+set $ws12 "12:recd"
+set $ws13 "13:kpxc"
+set $ws14 "13:torr"
 
 # switch to next and prev workspace
 bindsym Mod4+Tab workspace next
@@ -271,6 +270,7 @@ for_window [class="Steam"]                  focus
 for_window [class="Flashplayer"]            focus
 for_window [class="obs"]                    focus
 for_window [class="KeePassXC"]              focus
+for_window [class="qBittorrent"]            focus
 
 
 ##############################################################################
@@ -279,36 +279,49 @@ for_window [class="KeePassXC"]              focus
 
 
 assign [class="firefox"]                    →  $ws1
-assign [class="Brave-browser"]              →  $ws1
+
 assign [class="kitty"]                      →  $ws2
 assign [class="DBeaver"]                    →  $ws2
 assign [class="code-oss"]                   →  $ws2
-assign [class="GParted"]                    →  $ws3
-assign [class="Thunar"]                     →  $ws3
-assign [class="Pcmanfm"]                    →  $ws3
-assign [class="Veracrypt"]                  →  $ws3
-assign [class="Gedit"]                      →  $ws3
-assign [class="okular"]                     →  $ws4
-assign [class="Zathura"]                    →  $ws4
-assign [title="LibreOffice"]                →  $ws4
-assign [class="Virt-manager"]               →  $ws5
-assign [class="TelegramDesktop"]            →  $ws6
-assign [class="Thunderbird"]                →  $ws6
-assign [class="Signal"]                     →  $ws6
-assign [class="Skype"]                      →  $ws6
-assign [class="cantata"]                    →  $ws7
-assign [class="mpv"]                        →  $ws8
-assign [class="Popcorn-Time"]               →  $ws8
-assign [class="Viewnior"]                   →  $ws9
-assign [class="Gimp"]                       →  $ws9
+
+
+assign [class="okular"]                     →  $ws3
+assign [class="Zathura"]                    →  $ws3
+assign [title="LibreOffice"]                →  $ws3
+
+assign [class="TelegramDesktop"]            →  $ws4
+assign [class="Thunderbird"]                →  $ws4
+assign [class="Signal"]                     →  $ws4
+assign [class="Skype"]                      →  $ws4
+
+assign [class="cantata"]                    →  $ws5
+
+assign [class="mpv"]                        →  $ws6
+assign [class="Popcorn-Time"]               →  $ws6
+
+assign [class="Viewnior"]                   →  $ws7
+assign [class="Gimp"]                       →  $ws7
+
+assign [class="GParted"]                    →  $ws8
+assign [class="Thunar"]                     →  $ws8
+assign [class="Pcmanfm"]                    →  $ws8
+assign [class="Veracrypt"]                  →  $ws8
+assign [class="Gedit"]                      →  $ws8
+
+assign [class="Virt-manager"]               →  $ws9
+
 assign [class=".exe"]                       →  $ws10
 assign [title="Winetricks"]                 →  $ws10
 assign [title="Wine"]                       →  $ws10
+
 assign [class="Steam"]                      →  $ws11
 assign [class="Flashplayer"]                →  $ws11
+
 assign [class="obs"]                        →  $ws12
+
 assign [class="KeePassXC"]                  →  $ws13
 
+assign [class="qBittorrent"]                →  $ws14
 
 ##############################################################################
 #                                 COLORS                                     #
@@ -323,9 +336,3 @@ client.urgent           #FF0000 #FFA500 #FFFFFF #00FF00   #FF0000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
-
-
-# restart i3 or polybar inplace (preserves your layout/session)
-bindsym Mod4+Shift+r restart 
-bindsym Mod4+p exec "polybar-msg cmd toggle"
-bindsym Mod4+Shift+p exec "polybar-msg cmd restart"
