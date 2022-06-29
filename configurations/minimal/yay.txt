@@ -1,11 +1,9 @@
-gitkraken
+jitsi-meet-desktop-bin
 ly
 mpd-notification-git
-nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 nvim-packer-git
 peazip-gtk2-bin
-skypeforlinux-stable-bin
-ttf-joypixels
+signal-desktop
 ttf-ms-fonts
 zaread-git
