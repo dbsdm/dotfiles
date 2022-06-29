@@ -1,0 +1,45 @@
+for_window [class="firefox"]                             focus
+
+for_window [app_id="kitty"]                              focus
+for_window [app_id="DBeaver"]                            focus
+for_window [class="code-oss"]                            focus
+
+for_window [app_id="org.kde.okular"]                     focus
+for_window [app_id="org.pwmt.zathura"]                   focus
+for_window [title="LibreOffice"]                         focus
+
+
+for_window [app_id="telegramdesktop"]                    focus
+for_window [class="Thunderbird"]                         focus
+for_window [class="Signal"]                              focus
+for_window [class="Skype"]                               focus
+
+for_window [app_id="cantata"]                            focus
+
+for_window [app_id="mpv"]                                focus
+for_window [class="Popcorn-Time"]                        focus
+
+for_window [class="Viewnior"]                            focus
+for_window [class="Gimp"]                                focus
+for_window [app_id = "mypaint"]                          focus
+
+for_window [class="GParted"]                             focus
+for_window [app_id="thunar"]                             focus
+for_window [class="Pcmanfm"]                             focus
+for_window [app_id="veracrypt"]                          focus
+for_window [app_id="gedit"]                              focus
+
+for_window [app_id="virt-manager"]                       focus
+
+for_window [class=".exe"]                                focus
+for_window [title="Winetricks"]                          focus
+for_window [title="Wine"]                                focus
+
+for_window [class="Steam"]                               focus
+for_window [class="Flashplayer"]                         focus
+
+for_window [app_id="com.obsproject.Studio"]              focus
+
+for_window [app_id="org.keepassxc.KeePassXC"]            focus
+
+for_window [app_id="org.qbittorrent.qBittorrent"]        focus

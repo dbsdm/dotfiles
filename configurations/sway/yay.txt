@@ -2,3 +2,4 @@ grimshot
 swaytools
 wl-color-picker
 wshowkeys
+ly

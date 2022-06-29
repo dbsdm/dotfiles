@@ -16,11 +16,11 @@ assign [class="Skype"]                               → $ws4
 
 assign [app_id="cantata"]                            → $ws5
 
-assign [class="mpv"]                                 → $ws6
 assign [class="Popcorn-Time"]                        → $ws6
 
 assign [class="Viewnior"]                            → $ws7
 assign [class="Gimp"]                                → $ws7
+assign [app_id="mypaint"]                            → $ws7
 
 assign [class="GParted"]                             → $ws8
 assign [app_id="thunar"]                             → $ws8
@@ -41,4 +41,4 @@ assign [app_id="com.obsproject.Studio"]              → $ws12
 
 assign [app_id="org.keepassxc.KeePassXC"]            → $ws13
 
-assign [app_id="org.qbittorrent.qBittorrent"] → $ws14
+assign [app_id="org.qbittorrent.qBittorrent"]        → $ws14
