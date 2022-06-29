@@ -32,6 +32,7 @@ yay -S --noconfirm - < yay.txt
 #                              LINKING CONFIGS                               #
 ##############################################################################
 
+mkdir $HOME/.config
 LINK "alacritty" "$HOME/.config"
 LINK "kitty" "$HOME/.config"
 LINK "nvim" "$HOME/.config"
