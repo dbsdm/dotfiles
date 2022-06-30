@@ -10,3 +10,4 @@ swaybg
 swaylock
 waybar
 wl-clipboard
+xorg-xwayland

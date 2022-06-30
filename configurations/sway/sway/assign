@@ -1,4 +1,5 @@
 assign [class="firefox"]                             → $ws1
+assign [app_id="firefox"]                            → $ws1
 
 assign [app_id="kitty"]                              → $ws2
 assign [app_id="DBeaver"]                            → $ws2

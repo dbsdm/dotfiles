@@ -1,3 +1,4 @@
+for_window [app_id="firefox"]                            focus
 for_window [class="firefox"]                             focus
 
 for_window [app_id="kitty"]                              focus
