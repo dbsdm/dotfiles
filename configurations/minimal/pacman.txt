@@ -50,6 +50,7 @@ openbsd-netcat
 os-prober
 pamixer
 pavucontrol
+pcmanfm
 playerctl
 print-manager
 procs

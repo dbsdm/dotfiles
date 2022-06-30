@@ -11,6 +11,7 @@ o.scrolloff = 7
 o.timeoutlen = 500
 o.laststatus= 3
 o.termguicolors= true
+o.sdf="/tmp/.viminfo"
 
 --window local options
 wo.colorcolumn = "79"

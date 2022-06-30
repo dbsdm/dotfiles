@@ -1,5 +1,6 @@
 jitsi-meet-desktop-bin
 ly
+glow
 mpd-notification-git
 nerd-fonts-jetbrains-mono
 nvim-packer-git
@@ -7,3 +8,4 @@ peazip-gtk2-bin
 signal-desktop
 ttf-ms-fonts
 zaread-git
+xdg-ninja

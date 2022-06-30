@@ -11,7 +11,5 @@ fisher install jorgebucaran/nvm.fish             # nvm for fish
 
 # installing poetry
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-# adding python poetry completions
-poetry completions fish > ~/.config/fish/completions/poetry.fish
 
 chsh -s /bin/fish db
