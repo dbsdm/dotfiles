@@ -20,7 +20,7 @@ sudo pacman -Sy --noconfirm - < pacman.txt
 temp=$(pwd)
 rm -rf ~/yay-git
 git clone https://aur.archlinux.org/yay.git ~/yay-git
-cd ~/yay-git && yes | makepkg -si && cd $indir && rm -rf ~/yay-git
+cd ~/yay-git && yes | makepkg -si && cd $temp && rm -rf ~/yay-git
 
 ##############################################################################
 #                          INSTALLING AUR PACKAGES                           #
