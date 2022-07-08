@@ -45,4 +45,5 @@ New configuration will be automatically picked up and offered during installatio
 8. [Move stack](https://dwm.suckless.org/patches/movestack/)
 9. [No borders flicker fix](https://dwm.suckless.org/patches/noborderflicker/)
 10. [Systray](https://dwm.suckless.org/patches/systray/)
-11. [NoTitle](https://dwm.suckless.org/patches/notitle/)
+11. [No title](https://dwm.suckless.org/patches/notitle/)
+12. [Status Colors](https://dwm.suckless.org/patches/statuscolors/)
