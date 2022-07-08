@@ -1,0 +1,42 @@
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* move controls to the bottom of the window */
+#browser {
+    -moz-box-ordinal-group: 0 !important;
+}
+
+/* restore fullscreen behavior of controls (should collapse) */
+#nav-bar[inFullscreen],
+#TabsToolbar[inFullscreen] {
+    display: none;
+}
+
+/* remove: close btn, new tab btn, muted label */
+#tabs-newtab-button,
+.tab-close-button.close-icon,
+.tab-secondary-label {
+    display: none;
+}
+
+/* change color on muted tab instead of adding label */
+.tabbrowser-tab[muted="true"] {
+    color: #ff0000 !important;
+    font-weight: bold !important;
+}
+
+/* controls style */
+:root {
+    --tab-border-radius: 0px !important;
+    --tab-min-height: 30px !important;
+    --tab-block-margin: 0px !important;
+    --toolbarbutton-border-radius: 0px !important;
+    --tabs-navbar-shadow-size: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+}
+
+/* smaller squared tabs */
+.tabbrowser-tab {
+    padding: 0 !important;
+    height: 10px !important;
+    --lwt-tab-line-color: transparent !important;
+}
