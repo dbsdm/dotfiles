@@ -17,3 +17,6 @@ configurations/dwm/slstatus/config.h
 configurations/dwm/slstatus/slstatus
 configurations/dwm/dwmblocks/blocks.h
 configurations/dwm/dwmblocks/dwmblocks
+configurations/dwm/dmenu/*.o
+configurations/dwm/dmenu/dmenu
+configurations/dwm/dmenu/config.h
