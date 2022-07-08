@@ -9,7 +9,6 @@ assign [app_id="org.kde.okular"]                     → $ws3
 assign [app_id="org.pwmt.zathura"]                   → $ws3
 assign [title="LibreOffice"]                         → $ws3
 
-
 assign [app_id="telegramdesktop"]                    → $ws4
 assign [class="Thunderbird"]                         → $ws4
 assign [class="Signal"]                              → $ws4
@@ -18,6 +17,7 @@ assign [class="Skype"]                               → $ws4
 assign [app_id="cantata"]                            → $ws5
 
 assign [class="Popcorn-Time"]                        → $ws6
+assign [app_id="mpv"]                        	     → $ws6
 
 assign [class="Viewnior"]                            → $ws7
 assign [class="Gimp"]                                → $ws7
@@ -43,3 +43,5 @@ assign [app_id="com.obsproject.Studio"]              → $ws12
 assign [app_id="org.keepassxc.KeePassXC"]            → $ws13
 
 assign [app_id="org.qbittorrent.qBittorrent"]        → $ws14
+
+assign [class="Emacs"]                               → $ws15

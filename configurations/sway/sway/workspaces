@@ -1,5 +1,5 @@
 set $ws1  "1:web"
-set $ws2  "2:dev"
+set $ws2  "2:cmd"
 set $ws3  "3:doc"
 set $ws4  "4:msg"
 set $ws5  "5:mus"
@@ -8,10 +8,11 @@ set $ws7  "7:gfx"
 set $ws8  "8:sys"
 set $ws9  "9:virt"
 set $ws10 "10:wine"
-set $ws11 "11:game"
+set $ws11 "11:play"
 set $ws12 "12:recd"
 set $ws13 "13:kpxc"
-set $ws14 "13:torr"
+set $ws14 "14:torr"
+set $ws15 "15:emacs"
 
 bindsym Mod4+Tab workspace next
 bindsym Mod4+Shift+Tab workspace prev

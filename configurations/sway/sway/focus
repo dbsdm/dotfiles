@@ -44,3 +44,5 @@ for_window [app_id="com.obsproject.Studio"]              focus
 for_window [app_id="org.keepassxc.KeePassXC"]            focus
 
 for_window [app_id="org.qbittorrent.qBittorrent"]        focus
+
+for_window [class="Emacs"]                               focus

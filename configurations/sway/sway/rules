@@ -7,13 +7,13 @@ for_window [title="Wine"]                   floating enable, move position cente
 for_window [class="XTerm"]                  floating enable, move position center
 for_window [app_id="Alacritty"]             floating enable, move position center
 for_window [app_id="veracrypt"]             floating enable, move position center
-for_window [app_id="peazip"]                floating enable, move position center
+for_window [class="Peazip"]                 floating enable, move position center
 for_window [title="F95Viewer"]              floating enable, move position center
 
 for_window [app_id="pavucontrol"]           resize set 800 600
 for_window [class="Nitrogen"]               resize set 800 600
 for_window [class="XTerm"]                  resize set 800 600
 for_window [app_id="Alacritty"]             resize set 800 600
-for_window [app_id="peazip"]                resize set 800 600
+for_window [class="Peazip"]                 resize set 800 600
 
 for_window [app_id="virt-manager"]          layout tabbed

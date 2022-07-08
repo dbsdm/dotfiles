@@ -1,11 +1,14 @@
 set $browser firefox
 set $terminal kitty
+set $emacsclient emacsclient -ca emacs
 
 bindsym --to-code {
     # start browser
     Mod4+backslash exec $browser
     # start terminal
     Mod4+Return exec $terminal
+    # start emacs client
+    Mod4+e exec $emacsclient
     # kill focused window
     Mod4+Shift+q kill
     # start bemenu

@@ -29,6 +29,13 @@ cd ~/yay-git && yes | makepkg -si && cd $temp && rm -rf ~/yay-git
 yay -S --noconfirm - < yay.txt
 
 ##############################################################################
+#                           INSTALLING DOOM EMACS                            #
+##############################################################################
+
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
+##############################################################################
 #                              LINKING CONFIGS                               #
 ##############################################################################
 
@@ -44,11 +51,11 @@ LINK "tmux" "$HOME/.config"
 LINK "rtorrent" "$HOME/.config"
 LINK "git" "$HOME/.config"
 LINK "mpd" "$HOME/.config"
+LINK "mpd-notification.conf" "$HOME/.config"
+mkdir ~/.config/mpd/playlists
 touch ~/.config/mpd/database
 touch ~/.config/mpd/state
 touch ~/.config/mpd/pid
-mkdir ~/.config/mpd/playlists
-LINK "mpd-notification.conf" "$HOME/.config"
 
 ##############################################################################
 #                                  SYSTEMD                                   #
@@ -59,6 +66,7 @@ sudo systemctl enable cups
 sudo systemctl enable libvirtd
 systemctl enable --user mpd
 systemctl enable --user mpd-notification
+systemctl enable --user emacs
 
 ##############################################################################
 #                           DEFAULT APPLICATIONS                             #
