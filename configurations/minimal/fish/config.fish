@@ -13,8 +13,10 @@ set EDITOR "nvim"
 set VISUAL "nvim" 
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 0
 set -gx QT_STYLE_OVERRIDE kvantum
+set -gx nvm_default_version latest
 set -gx PATH "$HOME/.cargo/bin/" $PATH
 set -gx PATH "$HOME/.local/bin/" $PATH
+set -gx PATH "$HOME/.emacs.d/bin/" $PATH
 
 ##############################################################################
 #                                    XDG                                     #
@@ -27,6 +29,10 @@ set -Ux XDG_CACHE_HOME      $HOME/.cache/
 
 set -Ux POETRY_HOME         "$XDG_DATA_HOME"/poetry/
 set -Ux HISTFILE            "$XDG_STATE_HOME"/bash/history/
+set -Ux XCURSOR_PATH        /usr/share/icons:$XDG_DATA_HOME/icons
+set -Ux GTK2_RC_FILES       "$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+set -Ux GNUPGHOME           "$XDG_DATA_HOME"/gnupg
+set -Ux DOOMDIR             "$XDG_CONFIG_HOME"/doom
 
 ##############################################################################
 #                              PLUGINS SETTINGS                              #
@@ -39,5 +45,7 @@ set -U __done_min_cmd_duration 5000 #ms
 ##############################################################################
 
 alias v="nvim"
+alias e="emacsclient -ca emacs"
 alias lg="lazygit"
 alias ll="exa -lha --git"
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
