@@ -52,6 +52,7 @@ LINK "rtorrent" "$HOME/.config"
 LINK "git" "$HOME/.config"
 LINK "mpd" "$HOME/.config"
 LINK "mpd-notification.conf" "$HOME/.config"
+LINK ".npmrc" "$HOME/"
 mkdir ~/.config/mpd/playlists
 touch ~/.config/mpd/database
 touch ~/.config/mpd/state
