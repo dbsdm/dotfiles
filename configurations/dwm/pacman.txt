@@ -1,9 +1,10 @@
-conky
-dmenu
+breeze
+breeze-gtk
+breeze-icons
 dunst
+kvantum
 lxappearance
 lxsession
-network-manager-applet
 nitrogen
 picom
 xclip
