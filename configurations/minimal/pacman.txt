@@ -6,12 +6,15 @@ bat
 bleachbit
 bridge-utils
 btop
+cmake
 cantata
 cups
 dbeaver
 dmidecode
 dnsmasq
 exa
+emacs-nativecomp
+shellcheck
 fd
 ffmpeg
 ffmpegthumbnailer

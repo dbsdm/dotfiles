@@ -25,7 +25,6 @@ exec --no-startup-id xdg-settings set default-web-browser firefox.desktop
 #                               AUTOSTART                                    #
 ##############################################################################
 
-
 exec --no-startup-id lxsession
 exec --no-startup-id dunst
 exec --no-startup-id picom
@@ -34,6 +33,7 @@ exec --no-startup-id betterlockscreen -w
 exec --no-startup-id xset r rate 200 30
 exec --no-startup-id xrandr -s 1280x1024 -r 75
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
+
 ############################################################################## 
 #                                DEFAULTS                                    #
 ##############################################################################
@@ -82,6 +82,8 @@ floating_modifier Mod4
 
 # start rofi (a program launcher)
 bindsym Mod4+d exec "rofi -show drun"
+# start emacs client 
+bindsym Mod4+e exec "emacsclient -ca emacs"
 # emoji picker
 bindsym Mod4+Shift+e exec rofimoji
 # powermenu
