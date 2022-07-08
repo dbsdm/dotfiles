@@ -1,40 +1,38 @@
-local o = vim.o
-local vg = vim.g
-local wo = vim.wo
-local bo = vim.bo
+local g = vim.o
+local v = vim.g
+local w = vim.wo
+local b = vim.bo
 
 --global options
-o.swapfile = false
-o.mouse = "a"
-o.hidden = true
-o.scrolloff = 7
-o.timeoutlen = 500
-o.laststatus= 3
-o.termguicolors= true
-o.sdf="/tmp/.viminfo"
+g.swapfile = false
+g.mouse = "a"
+g.hidden = true
+g.scrolloff = 7
+g.timeoutlen = 500
+g.laststatus= 3
+g.termguicolors= true
+g.sdf="/tmp/.viminfo"
 
 --window local options
-wo.colorcolumn = "79"
-wo.number = true
+w.colorcolumn = "79"
+w.number = true
 
 --buffer local options
-bo.autoindent = true
-bo.tabstop = 4
-bo.softtabstop = 4
-bo.shiftwidth = 4
-bo.expandtab = true
-bo.autoindent = true
-bo.fileformat = "unix"
-bo.undofile = true
-bo.matchpairs = ""
+b.autoindent = true
+b.tabstop = 4
+b.softtabstop = 4
+b.shiftwidth = 4
+b.expandtab = true
+b.autoindent = true
+b.fileformat = "unix"
+b.undofile = true
+b.matchpairs = ""
+b.filetype = "plugin"
 
 --global vim opts
-vg.user_emmet_leader_key = "<C-Z>" -- trailing ',' required
-vg.gruvbox_transparent_bg = 1
-vg.which_key_centered = 0
-vg.floaterm_width = 0.8
-vg.floaterm_height = 0.6
+v.which_key_centered = 1
+v.floaterm_width = 0.8
+v.floaterm_height = 0.6
 
---misc
-vim.cmd [[filetype plugin on]]
-vim.cmd [[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]]
+-- autocommands
+-- vim.cmd [[autocmd CursorHoldI  * lua vim.lsp.buf.signature_help()]]
