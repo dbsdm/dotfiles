@@ -18,10 +18,9 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+        autocmd BufWritePost plugins.lua source <afile> | PackerSync 
+    augroup end
 ]]
-
 -- Use a protected call to avoid errors on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -79,18 +78,15 @@ return require("packer").startup(function()
 
     -- colorful
     use "morhetz/gruvbox"
-    use "Mofiqul/dracula.nvim"
     use "NLKNguyen/papercolor-theme"
     -- monotone
-        -- top
-        use "zaki/zazen"
-        use "Lokaltog/vim-monotone"
-        use "nikolvs/vim-sunbather"
-        use "jaredgorski/fogbell.vim"
-        use "kadekillary/skull-vim"
-        use "davidosomething/vim-colors-meh"
-        use "andreypopp/vim-colors-plain"
-        use "axvr/photon.vim"
+    use "dbsdm/jet"
+    use "zekzekus/menguless"
+    use "robertmeta/nofrils"
+    use "jaredgorski/fogbell.vim"
+    use "kadekillary/skull-vim"
+    use "davidosomething/vim-colors-meh"
+
 
     ------------------------------- VISUALS ----------------------------------
 
