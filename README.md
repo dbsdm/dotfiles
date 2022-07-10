@@ -1,38 +1,33 @@
-# Installation
-Run right after clean Arch Linux installation, as user.
+# How to use
 ```bash
 ./install.sh
 ```
-# Desktop Environments and Window Managers
-By default [ly](https://github.com/fairyglade/ly) used as desktop manager.
-Script will ask you which DE or WM should be installed.
-<br/>After ```install.sh``` will finish installing essential packages and performing basic configurations, desktop specific ```install.sh``` will be launched:
+# Installation process
+1. Script will ask you which configuration should be installed.
+2. Regardless of the choice made, the 'minimal' configuration will be installed first:
 ```
-dotfiles/desktops/{desktop_name}/install.sh
+dotfiles/configurations/minimal/install.sh
 ```
-This script will perform configuration required for specific desktop (installing additional dependencies, configuring conky, dunst, etc.).
-### Adding new DE or WM
-To add new configuration:
-1. Create directory under 'configurations'
-2. Place all files related to new DE or WM in created directory
-3. Create 'install.sh' file with necessary configuration
-
-New configuration will be automatically picked up and offered during installation.
+3. Additional configurations are installed (if they were selected in step 1):
+```
+dotfiles/configurations/{configuration_name}/install.sh
+```
+# How to add configuration
+1. Create directory under 'configurations', dir name = configuration name.
+2. Place all files required for configuration in newly created dir.
+3. Create 'install.sh' file.
 
 # Available configurations
 ### sway
-**Theme:** Pure Black (zazen fork)<br/>
-**Font:** Jet Brains Mono Nerd Font<br/>
+**Display server/Protocol:** Wayland<br/>
 **Environment:** bemenu, waybar, dunst<br/>
 
 ### i3
-**Theme:** Pure Black (zazen fork)<br/>
-**Font:** Jet Brains Mono Nerd Font<br/>
+**Display server/Protocol:** Xorg<br/>
 **Environment:** rofi, polybar, dunst, conky<br/>
 
 ### dwm
-**Theme:** Pure Black (zazen fork)<br/>
-**Font:** Jet Brains Mono Nerd Font<br/>
+**Display server/Protocol:** Xorg<br/>
 **Environment:** dmenu, slstatus, dunst, conky<br/>
 **Applied patches:**
 1. [Actual fulscreen](https://dwm.suckless.org/patches/actualfullscreen/)
