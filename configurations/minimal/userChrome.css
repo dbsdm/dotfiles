@@ -21,7 +21,12 @@
 /* change color on muted tab instead of adding label */
 .tabbrowser-tab[muted="true"] {
     color: #ff0000 !important;
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
+}
+
+/* change color on playing tab instead of adding label */
+.tabbrowser-tab[soundplaying="true"] {
+    color: #00ff00 !important;
 }
 
 /* controls style */
