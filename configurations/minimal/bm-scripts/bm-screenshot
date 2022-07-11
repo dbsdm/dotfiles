@@ -1,0 +1,71 @@
+#!/usr/bin/bash
+#
+# Desscription: screenshots for X and Wayland
+# Dependencies: grimshot(wayland)
+
+BACKEND=$(loginctl show-session "$XDG_SESSION_ID" -p Type | cut -d= -f2)
+
+declare -A options_w_s=(
+    ["Active window"]="grimshot save active" 
+    ["Entire screen"]="grimshot save screen" 
+    ["Select area"]="grimshot save area" 
+    ["Select window"]="grimshot save window" 
+    ["Active output"]="grimshot save output" 
+)
+
+declare -A options_w_c=(
+    ["Active window"]="grimshot copy active" 
+    ["Entire screen"]="grimshot copy screen" 
+    ["Select area"]="grimshot copy area" 
+    ["Select window"]="grimshot copy window" 
+    ["Active output"]="grimshot copy output" 
+)
+
+declare -A options_x_s=(
+    ["Select area"]="flameshot gui" 
+    ["All monitors"]="flameshot full" 
+)
+
+declare -A options_x_c=(
+    ["Select area"]="flameshot gui --clipboard" 
+    ["All monitors"]="flameshot full --clipboard" 
+)
+
+action=$(printf 'Copy\nSave' | bemenu -l 2 -p "Action:" "${@}")
+
+[ -z "$action" ] && exit 1
+
+if [ "$BACKEND" = "wayland" ]
+then
+    if [ "$action" = "Save" ]
+    then
+        type=$(printf '%s\n' "${!options_w_s[@]}" | bemenu -l 5 -p "Screenshot:" "${@}")
+        [ -z "$type" ] && exit 1
+        command="${options_w_s[$type]}"
+    elif [ "$action" = "Copy" ]
+    then
+        type=$(printf '%s\n' "${!options_w_c[@]}" | bemenu -l 5 -p "Screenshot:" "${@}")
+        [ -z "$type" ] && exit 1
+        command="${options_w_c[$type]}"
+    else
+        exit 0
+    fi
+else
+    if [ "$action" = "Save" ]
+    then
+        type=$(printf '%s\n' "${!options_x_s[@]}" | bemenu -l 2 -p "Screenshot:" "${@}")
+        [ -z "$type" ] && exit 1
+        command="${options_x_s[$type]}"
+    elif [ "$action" = "Copy" ]
+    then
+        type=$(printf '%s\n' "${!options_x_c[@]}" | bemenu -l 2 -p "Screenshot:" "${@}")
+        [ -z "$type" ] && exit 1
+        command="${options_x_c[$type]}"
+    else
+        exit 0
+    fi
+fi
+
+[ -z "$command" ] && exit 1
+
+$command

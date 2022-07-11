@@ -190,19 +190,20 @@ static const char *mpctogglecmd[] = { "mpc", "--port = 8888", "toggle", NULL };
 static const char *mpcnextcmd[]   = { "mpc", "--port = 8888", "next", NULL };
 static const char *mpcprevcmd[]   = { "mpc", "--port = 8888", "prev", NULL };
 static const char *mpcpausecmd[]  = { "mpc", "--port = 8888", "pause", NULL };
-static const char *lockcmd[]      = { "betterlockscreen", "-l", NULL };
-static const char *sscmd[]        = { "flameshot", "gui", NULL };
+static const char *powermenu[]    = { "bm-power", NULL };
+static const char *screenshot[]   = { "bm-screenshot", NULL };
+static const char *searchweb[]    = { "bm-search", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
-/*    mod                  key             func            arg              */
+/*    	  mod                  key             func            arg          */
 	{ MODKEY,              XK_d,           spawn,          {.v = dmenucmd}},
 	{ MODKEY,              XK_Return,      spawn,          {.v = termcmd}},
 	{ MODKEY,              XK_backslash,   spawn,          {.v = webcmd}},
 	{ MODKEY,              XK_e,           spawn,          {.v = emacsclient }},
 	{ MODKEY,              XK_j,           focusstack,     {.i = +1 }},
 	{ MODKEY,              XK_k,           focusstack,     {.i = -1 }},
-    { MODKEY,              XK_h,           setmfact,       {.f = -0.01}},
+    	{ MODKEY,              XK_h,           setmfact,       {.f = -0.01}},
 	{ MODKEY,              XK_l,           setmfact,       {.f = +0.01}},
 	{ MODKEY,              XK_BackSpace,   setlayout,      {0}},
 	{ MODKEY,              XK_f,           togglefloating, {0}},
@@ -217,7 +218,9 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,     XK_n,           spawn,          {.v = mpcnextcmd}},
 	{ MODKEY|Mod1Mask,     XK_p,           spawn,          {.v = mpcprevcmd}},
 
-	{ MODKEY|Mod1Mask,     XK_s,           spawn,          {.v = sscmd}},
+	{ MODKEY|ControlMask,  XK_s,           spawn,          {.v = screenshot}},
+	{ MODKEY|ControlMask,  XK_p,           spawn,          {.v = powermenu}},
+	{ MODKEY|ControlMask,  XK_f,           spawn,          {.v = searchweb}},
 
 	{ MODKEY|ShiftMask,    XK_j,           movestack,      {.i = +1}},
 	{ MODKEY|ShiftMask,    XK_k,           movestack,      {.i = -1}},

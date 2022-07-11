@@ -1,0 +1,55 @@
+#!/usr/bin/bash
+#
+# Desscription: simple power menu
+# Dependencies: systemd
+
+declare -a options=(
+"Shutdown"  
+"Suspend" 
+"Reboot" 
+"Logout" 
+"Lock"
+)
+
+choice=$(printf '%s\n' "${options[@]}" | bemenu -l 5 -p "Power menu:" "${@}")
+
+case "$choice" in
+    "Shutdown") 
+        if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
+            systemctl poweroff
+        else
+            echo "Aborted." && exit 1
+        fi
+    ;;
+    "Suspend") 
+        if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
+            systemctl suspend
+        else
+            echo "Aborted." && exit 1
+        fi
+    ;;
+    "Reboot")
+        if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
+            systemctl reboot
+        else
+            echo "Aborted." && exit 1
+        fi
+    ;;
+    "Logout")
+        if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
+            mpc --port=8888 pause && killall sway
+        else
+            echo "Aborted." && exit 1
+        fi
+    ;;
+    "Lock")
+        if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
+            mpc --port=8888 pause && swaylock -F -c 000000
+        else
+            echo "Aborted." && exit 1
+        fi
+    ;;
+    *)
+        exit 0
+    ;;
+esac 

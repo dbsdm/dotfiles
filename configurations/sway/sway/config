@@ -51,3 +51,4 @@ include ./rules
 include ./assign
 include ./colors
 include ./focus
+include ./modes

@@ -2,7 +2,7 @@
     "position": "bottom",
     "height": 15,
     "spacing": 4,
-    "modules-left": ["sway/workspaces"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
     "modules-right": ["mpd", "pulseaudio", "cpu", "memory", "clock", "tray"],
 
@@ -10,6 +10,9 @@
         "disable-scroll": true,
         "all-outputs": true,
         "format": "  {name}",
+    },
+    "sway/mode": {
+        "format": "   {}"
     },
     "mpd": {
         "port": 8888,
@@ -19,22 +22,6 @@
         "interval": 3,
         "on-click": "mpc --port=8888 toggle",
         "on-click-right": "cantata",
-    },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 5
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%H:%M %d-%m-%Y}"
-    },
-    "cpu": {
-        "interval": 5,
-        "format": "{usage}%",
-    },
-    "memory": {
-        "interval": 5,
-        "format": "{}%",
     },
     "pulseaudio": {
         "scroll-step": 5,
@@ -46,6 +33,22 @@
 
         "format-source": " {volume}%",
         "format-source-muted": "",
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "{usage}%",
+    },
+    "memory": {
+        "interval": 5,
+        "format": "{}%",
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%H:%M %a %d-%m-%Y}"
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 5
     },
 }
 

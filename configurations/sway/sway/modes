@@ -1,0 +1,15 @@
+set $mod Mod4
+
+##############################################################################
+#                Mode for launching bmenu(dmenu) scripts                     #
+##############################################################################
+
+set $mode_screenshot screenshot: [f]ullscreen [s]selection
+# bindsym $mod+b mode "$mode_screenshot"
+
+mode "$mode_screenshot" {
+    bindsym $mod+p exec bm-power
+    bindsym $mod+s exec bm-search
+
+    bindsym Escape mode "default"
+}

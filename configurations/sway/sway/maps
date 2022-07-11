@@ -1,24 +1,20 @@
+set $mod Mod4
+
 set $browser firefox
 set $terminal kitty
 set $emacsclient emacsclient -ca emacs
 
 bindsym --to-code {
-    # start browser
-    Mod4+backslash exec $browser
-    # start terminal
-    Mod4+Return exec $terminal
-    # start emacs client
-    Mod4+e exec $emacsclient
-    # kill focused window
-    Mod4+Shift+q kill
-    # start bemenu
-    Mod4+d exec bemenu-run -b -H 25 --fn "JetBrainsMono Nerd Font 10" --tb "#000000" --tf "#ffffff" --fb "#000000" --ff "#ffffff" --nb "#000000" --nf "#ffffff" --hb "#000000" --hf "#00ff00"
-    # lock screen
-    Mod4+Mod1+l exec "mpc --port=8888 pause && swaylock -F -c 000000"
-    # screenshot
-    Mod4+Mod1+s exec "grimshot save area"
-    # colorpicker
-    Mod4+Mod1+c exec "wl-color-picker clipboard"
-    # reload sway config
-    Mod4+Shift+r reload
+    $mod+backslash exec $browser
+    $mod+Return exec $terminal
+    $mod+e exec $emacsclient
+
+    $mod+Ctrl+s exec bm-screenshot
+    $mod+Ctrl+f exec bm-search
+    $mod+Ctrl+p exec bm-power
+    $mod+Ctrl+c exec "wl-color-picker clipboard"
+
+    $mod+Shift+r reload
+    $mod+Shift+q kill
+    $mod+d exec bemenu-run -p run -b -H 20 --fn "JetBrainsMono Nerd Font 10" --tb "#000000" --tf "#ffffff" --fb "#000000" --ff "#ffffff" --nb "#000000" --nf "#ffffff" --hb "#000000" --hf "#00ff00"
 }

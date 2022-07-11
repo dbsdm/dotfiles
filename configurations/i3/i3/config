@@ -26,10 +26,10 @@ exec --no-startup-id xdg-settings set default-web-browser firefox.desktop
 ##############################################################################
 
 exec --no-startup-id lxsession
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id polybar
-exec --no-startup-id betterlockscreen -w
 exec --no-startup-id xset r rate 200 30
 exec --no-startup-id xrandr -s 1280x1024 -r 75
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle -option caps:ctrl_modifier
@@ -87,13 +87,13 @@ bindsym Mod4+e exec "emacsclient -ca emacs"
 # emoji picker
 bindsym Mod4+Shift+e exec rofimoji
 # powermenu
-bindsym Mod4+Shift+Escape exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/powermenu
-# lock screen
-bindsym Mod4+Mod1+l exec mpc --port=8888 pause && betterlockscreen -l
+bindsym Mod1+Ctrl+p exec bm-power
 # screenshot
-bindsym Mod1+Mod4+s exec flameshot gui
+bindsym Mod1+Ctrl+s exec bm-screenshot
+# search web
+bindsym Mod1+Ctrl+f exec bm-search
 # colorpicker
-bindsym Mod1+Mod4+c exec "killall gpick ; gpick -s"
+bindsym Mod1+Ctrl+c exec "killall gpick ; gpick -s"
 
 # change focus
 bindsym Mod4+$left focus left

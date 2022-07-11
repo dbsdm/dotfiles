@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+#
+# Desscription: send search queries to websites
+# Dependencies: webbrowser(firefox by default)
+
+WEBBROWSER=firefox
+
+declare -A websites=(
+    ["Google"]="https://google.com/search?q=" 
+    ["DuckDuckGo"]="https://duckduckgo.com/?q=" 
+    ["Brave"]="https://search.brave.com/search?q=" 
+    ["SearX"]="https://searx.thegpm.org/search?q=" 
+    ["YouTube"]="https://www.youtube.com/results?search_query=" 
+    ["Github"]="https://github.com/search?q=" 
+    ["StackOverflow"]="https://stackoverflow.com/search?q="  
+    ["ArchWiki"]="https://wiki.archlinux.org/index.php?search="  
+    ["NNMClub"]="https://nnmclub.to/forum/tracker.php?nm="  
+    ["RuTracker"]="https://rutracker.org/forum/tracker.php?nm="  
+    ["ThePirateBay"]="https://thepiratebay.org/search.php?q="  
+)
+
+website=$(printf '%s\n' "${!websites[@]}" | bemenu -l 11 -p "Website to search:" "${@}")
+url="${websites[$website]}"
+
+[ -z "$url" ] && exit 1
+
+query=$(printf '%s' "" | bemenu -p "Search query:" "${@}")
+
+[ -z "$query" ] && exit 1
+
+$WEBBROWSER "$url$query"

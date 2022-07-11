@@ -1,3 +1,2 @@
-betterlockscreen
 polybar
 j4-persist
