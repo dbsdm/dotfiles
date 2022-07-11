@@ -26,14 +26,17 @@ cd ~/yay-git && yes | makepkg -si && cd $temp && rm -rf ~/yay-git
 #                          INSTALLING AUR PACKAGES                           #
 ##############################################################################
 
-yay -S --noconfirm - < yay.txt
+yay -Sy --noconfirm - < yay.txt
 
 ##############################################################################
 #                           INSTALLING DOOM EMACS                            #
 ##############################################################################
 
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
+yes | ~/.emacs.d/bin/doom install
+LINK "doom" "$HOME/.config"
+~/.emacs.d/bin/doom sync
+systemctl enable --user emacs
 
 ##############################################################################
 #                              LINKING CONFIGS                               #
@@ -67,7 +70,6 @@ sudo systemctl enable cups
 sudo systemctl enable libvirtd
 systemctl enable --user mpd
 systemctl enable --user mpd-notification
-systemctl enable --user emacs
 
 ##############################################################################
 #                           DEFAULT APPLICATIONS                             #
