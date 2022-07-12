@@ -1,9 +1,0 @@
-# volume
-bindsym Mod1+Mod4+i exec pactl set-sink-volume @DEFAULT_SINK@ +1% 
-bindsym Mod1+Mod4+d exec pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym Mod1+Mod4+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym Mod1+Mod4+Shift+m exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-# mpd
-bindsym Mod1+Mod4+t exec mpc --port=8888 toggle
-bindsym Mod1+Mod4+n exec mpc --port=8888 next
-bindsym Mod1+Mod4+p exec mpc --port=8888 prev

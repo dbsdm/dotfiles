@@ -1,0 +1,60 @@
+set $mod Mod4
+set $alt Mod1
+set $ctrl Ctrl
+set $shift Shift
+
+set $browser firefox
+set $terminal kitty
+set $emacs emacsclient -ca emacs
+
+floating_modifier $mod normal
+
+bindsym --to-code {
+
+    $mod+backslash             exec $browser
+    $mod+Return                exec $terminal
+    $mod+e                     exec $emacs
+
+    $mod+$ctrl+s               exec bm-screenshot
+    $mod+$ctrl+f               exec bm-search
+    $mod+$ctrl+p               exec bm-power
+    $mod+$ctrl+c               exec "wl-color-picker clipboard"
+
+    $mod+$alt+i                exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+    $mod+$alt+d                exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+    $mod+$alt+m                exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $mod+$alt+$shift+m         exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+    $mod+$alt+t                exec mpc --port=8888 toggle
+    $mod+$alt+n                exec mpc --port=8888 next
+    $mod+$alt+p                exec mpc --port=8888 prev
+
+    $mod+d                     exec bemenu-run -p run -b -H 20 --fn "JetBrainsMono Nerd Font 10" --tb "#000000" --tf "#ffffff" --fb "#000000" --ff "#ffffff" --nb "#000000" --nf "#ffffff" --hb "#000000" --hf "#00ff00"
+
+    $mod+h 	                   focus left
+    $mod+j                     focus down
+    $mod+k                     focus up
+    $mod+l                     focus right
+    
+    $mod+$shift+h              move left
+    $mod+$shift+j              move down
+    $mod+$shift+k              move up
+    $mod+$shift+l              move right
+    
+    $mod+f                     fullscreen toggle
+    $mod+$shift+f              floating toggle
+    $mod+space                 focus mode_toggle
+    
+    $mod+t                     layout tabbed
+    $mod+s                     layout toggle split
+    
+    $mod+a                     focus parent
+    $mod+c                     focus child
+    
+    $mod+minus                 scratchpad show
+    $mod+$shift+minus          move scratchpad
+
+    $mod+Shift+r 	           reload
+    $mod+Shift+q               kill
+
+}

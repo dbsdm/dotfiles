@@ -1,0 +1,6 @@
+exec --no-startup-id dunst
+exec --no-startup-id waybar
+exec --no-startup-id lxsession
+exec --no-startup-id gammastep -l 50.38:30.79 -t 6500:4500 -m wayland
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Breeze-Dark'  
+exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Breeze Dark' 

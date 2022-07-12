@@ -1,0 +1,14 @@
+output VGA-1 bg ~/dotfiles/walls/bird-3113835.jpg fill
+
+output VGA-1 mode 1280x1024@75Hz
+
+input "type:keyboard" { 
+    xkb_model pc105
+    xkb_layout us,ru,ua
+    xkb_options grp:win_space_toggle,caps:ctrl_modifier
+    repeat_delay 200
+    repeat_rate 30
+}
+
+seat * hide_cursor 5000
+seat * hide_cursor when-typing enable
