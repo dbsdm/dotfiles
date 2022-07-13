@@ -1,9 +1,9 @@
 include ./io
+include ./autostart
+include ./workspaces
 include ./rules
 include ./focus
 include ./modes
 include ./assign
-include ./visuals
 include ./bindings
-include ./autostart
-include ./workspaces
+include ./visuals

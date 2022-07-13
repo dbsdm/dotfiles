@@ -28,6 +28,7 @@ assign [app_id="thunar"]                             → $ws8
 assign [class="Pcmanfm"]                             → $ws8
 assign [app_id="veracrypt"]                          → $ws8
 assign [app_id="gedit"]                              → $ws8
+assign [app_id="bleachbit"]                          → $ws8
 
 assign [app_id="virt-manager"]                       → $ws9
 

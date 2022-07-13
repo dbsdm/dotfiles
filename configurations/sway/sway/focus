@@ -29,6 +29,7 @@ for_window [app_id="thunar"]                             focus
 for_window [class="Pcmanfm"]                             focus
 for_window [app_id="veracrypt"]                          focus
 for_window [app_id="gedit"]                              focus
+for_window [app_id="bleachbit"]                          focus
 
 for_window [app_id="virt-manager"]                       focus
 
