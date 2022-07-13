@@ -6,6 +6,7 @@ bat
 bleachbit
 bridge-utils
 btop
+clang
 cmake
 cantata
 cups
@@ -35,11 +36,13 @@ iniparser
 kdiff3
 keepassxc
 kitty
+llvm-libs
 lazygit
 libguestfs
 libnotify
 libreoffice
 linux-headers
+lua-language-server
 mpc
 mpd
 mpv
@@ -66,6 +69,7 @@ qt5ct
 ranger
 ripgrep
 rtorrent
+rust-analyzer
 steam
 sudo
 thunderbird
