@@ -6,29 +6,46 @@ end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    theme = '16color',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_b = {
+      {'filename',
+        symbols = {
+          modified = "[+]",
+          readonly = "[RO]",
+          unnamed = "[New File]",
+        }
+      },
+    },
+    lualine_c = {'branch', 'diff', 'diagnostics'},
+    lualine_x = {
+        'encoding',
+        {'fileformat',
+          symbols = {
+            unix = "unix",
+            dos = "dos",
+            mac = "mac",
+          }
+        },
+        {'filetype',
+          colored = true,
+        }
+    },
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  extensions = {}
+  extensions = {
+    "nvim-tree",
+    "toggleterm",
+    "nvim-dap-ui",
+    "symbols-outline",
+    "quickfix",
+  }
 }

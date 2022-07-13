@@ -189,7 +189,6 @@ static const char *voldcmd[]      = { "pactl", "set-sink-volume", "0", "-1%", NU
 static const char *mpctogglecmd[] = { "mpc", "--port = 8888", "toggle", NULL };
 static const char *mpcnextcmd[]   = { "mpc", "--port = 8888", "next", NULL };
 static const char *mpcprevcmd[]   = { "mpc", "--port = 8888", "prev", NULL };
-static const char *mpcpausecmd[]  = { "mpc", "--port = 8888", "pause", NULL };
 static const char *powermenu[]    = { "bm-power", NULL };
 static const char *screenshot[]   = { "bm-screenshot", NULL };
 static const char *searchweb[]    = { "bm-search", NULL };
@@ -227,8 +226,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_q,           killclient,     {0}},
 	{ MODKEY|ShiftMask,    XK_f,           togglefullscr,  {0}},
 	{ MODKEY|ShiftMask,    XK_Tab,         viewprev,       {0}},
-	{ MODKEY|ShiftMask,    XK_l,           spawn,          {.v = mpcpausecmd}},
-	{ MODKEY|ShiftMask,    XK_l,           spawn,          {.v = lockcmd}},
 
 	TAGKEYS(               XK_1,           0)
 	TAGKEYS(               XK_2,           1)

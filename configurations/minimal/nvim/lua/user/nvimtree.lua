@@ -4,34 +4,21 @@ if not status_ok then
 end
 
 nvimtree.setup {
-  auto_reload_on_write = true,
-  disable_netrw = false,
-  hijack_cursor = false,
-  hijack_netrw = true,
-  hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
-  open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
+  hijack_cursor = true,
+  respect_buf_cwd = true,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true
+  },
   view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
     side = "left",
-    preserve_window_proportions = false,
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        -- user mappings go here
-      },
-    },
+    adaptive_size = true,
   },
   renderer = {
+    add_trailing = true,
+    highlight_git = true,
     indent_markers = {
       enable = false,
       icons = {
@@ -42,16 +29,21 @@ nvimtree.setup {
     },
     icons = {
       webdev_colors = true,
+      glyphs = {
+        git = {
+          unstaged = "M",
+          staged = "S",
+          renamed = "R",
+          untracked = "U",
+          deleted = "D",
+          ignored = "I",
+        },
+      }
     },
   },
   hijack_directories = {
     enable = true,
     auto_open = true,
-  },
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-    ignore_list = {},
   },
   ignore_ft_on_setup = {},
   system_open = {
@@ -59,19 +51,14 @@ nvimtree.setup {
     args = {},
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     show_on_dirs = false,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = "H",
+      info = "I",
+      warning = "W",
+      error = "E",
     },
-  },
-  filters = {
-    dotfiles = false,
-    custom = {},
-    exclude = {},
   },
   git = {
     enable = true,

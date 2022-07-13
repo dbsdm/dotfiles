@@ -15,17 +15,9 @@ telescope.setup{
         ["<C-j>"] = "move_selection_next",
         ["<C-k>"] = "move_selection_previous"
       }
-    }
+    },
+    borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
   },
-  pickers = {
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-  },
-  extensions = {
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-  }
 }
+
+telescope.load_extension("projects")

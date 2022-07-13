@@ -9,9 +9,10 @@ g.mouse = "a"
 g.hidden = true
 g.scrolloff = 7
 g.timeoutlen = 500
-g.laststatus= 3
-g.termguicolors= true
-g.sdf="/tmp/.viminfo"
+g.laststatus = 3
+g.termguicolors = true
+g.sdf = "/tmp/.viminfo"
+g.showmode = false
 
 --window local options
 w.colorcolumn = "79"
@@ -35,4 +36,9 @@ v.floaterm_width = 0.8
 v.floaterm_height = 0.6
 
 -- autocommands
--- vim.cmd [[autocmd CursorHoldI  * lua vim.lsp.buf.signature_help()]]
+vim.cmd [[ 
+    augroup NoSyntaxFori3config
+        autocmd!
+        autocmd Filetype i3config syntax off
+    augroup END
+]]
