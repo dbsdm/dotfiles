@@ -1,14 +1,20 @@
 #!/usr/bin/bash
 #
 # Desscription: simple power menu
-# Dependencies: systemd
+# Dependencies: systemd, swaylock(sway), slock(xorg)
 
 declare -a options=(
-"Shutdown"  
-"Suspend" 
-"Reboot" 
-"Logout" 
-"Lock"
+    "Shutdown"  
+    "Suspend" 
+    "Reboot" 
+    "Logout" 
+    "Lock"
+)
+
+declare -a managers=(
+    "sway" 
+    "dwm" 
+    "i3" 
 )
 
 choice=$(printf '%s\n' "${options[@]}" | bemenu -l 5 -p "Power menu:" "${@}")
@@ -37,14 +43,23 @@ case "$choice" in
     ;;
     "Logout")
         if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            mpc --port=8888 pause && killall sway
+            for manager in "${managers[@]}"
+            do
+                mpc --port=8888 pause && killall "$manager"
+            done
         else
             echo "Aborted." && exit 1
         fi
     ;;
     "Lock")
         if [[ "$(echo -e "No\nYes" | bemenu -l 2 -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            mpc --port=8888 pause && swaylock -F -c 000000
+            BACKEND=$(loginctl show-session "$XDG_SESSION_ID" -p Type | cut -d= -f2)
+            if [ "$BACKEND" = "wayland" ]
+            then
+                mpc --port=8888 pause && swaylock -F -c 000000
+            else
+                mpc --port=8888 pause && slock
+            fi
         else
             echo "Aborted." && exit 1
         fi
